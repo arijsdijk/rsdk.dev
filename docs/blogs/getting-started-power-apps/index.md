@@ -26,6 +26,10 @@ To create your first canvas app:
 3. Select "Canvas app from blank"
 4. Choose your format (tablet or phone)
 
+```bash
+npm run dev
+```
+
 ## Understanding Controls
 
 Controls are the building blocks of your canvas app. The most common controls include:
@@ -39,10 +43,10 @@ Controls are the building blocks of your canvas app. The most common controls in
 
 Power Apps can connect to over 400 data sources, including:
 
-- SharePoint
-- Dataverse
-- SQL Server
-- Excel
+* SharePoint
+* Dataverse
+* SQL Server
+* Excel
 
 > "The key to successful app development is understanding your data sources and how they relate to each other."
 
