@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog Archive - Journal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --dark-navy: #232F34;
+            --cream: #E8E9E0;
+            --accent-red: #F24849;
+        }
+        @layer base {
+            body {
+                @apply bg-[var(--cream)] text-[var(--dark-navy)] antialiased;
+            }
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(35, 47, 52, 0.05);
+        }
+        .card-shadow:hover {
+            box-shadow: 0 10px 30px -5px rgba(35, 47, 52, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#232F34",
+                        "accent": "#F24849",
+                        "page-bg": "#E8E9E0",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display min-h-screen">
+<div class="relative flex flex-col min-h-screen w-full overflow-x-hidden">
+<header class="flex items-center justify-between border-b border-[var(--dark-navy)]/10 px-6 md:px-20 lg:px-40 py-6 bg-[var(--cream)]/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="text-[var(--dark-navy)]">
+<svg class="size-8" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 3H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H14C16.2091 21 18 19.2091 18 17V7L16 3Z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M11 11H14" stroke-linecap="round"></path>
+<path d="M11 15H14" stroke-linecap="round"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-black leading-tight tracking-tighter uppercase text-[var(--dark-navy)]">Journal</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors border-b-2 border-[var(--accent-red)] text-[var(--dark-navy)]" href="#">Blog</a>
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors text-[var(--dark-navy)]/70" href="#">Sessions</a>
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors text-[var(--dark-navy)]/70" href="#">About</a>
+</nav>
+<div class="hidden lg:flex items-center gap-5 border-l border-[var(--dark-navy)]/10 pl-8">
+<a aria-label="LinkedIn" class="text-[var(--dark-navy)] hover:text-[var(--accent-red)] transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a aria-label="X" class="text-[var(--dark-navy)] hover:text-[var(--accent-red)] transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a aria-label="Bluesky" class="text-[var(--dark-navy)] hover:text-[var(--accent-red)] transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 10.8c-1.087-2.114-4.046-3.06-6.05-1.071-1.313 1.302-1.096 3.427.323 4.596 2.126 1.755 4.604 1.106 5.727-.121.025-.028.054-.053.054-.053l.012-.014c.542.844 1.5 1.307 2.53 1.246 2.365-.14 3.828-2.546 3.27-4.904-.558-2.358-2.9-3.63-5.265-2.843-1.065.354-1.812 1.205-2.083 2.18-.024.088-.046.177-.066.267a1.18 1.18 0 0 0 .284 1.054c.261.277.653.375 1.012.252a1.176 1.176 0 0 0 .762-.97c.125-.765.733-1.332 1.488-1.353 1.144-.03 2.106.877 2.147 2.025.042 1.148-.834 2.105-1.978 2.135-1.144.03-2.106-.877-2.147-2.025a1.18 1.18 0 0 0-.256-.761l.012-.014s.029.025.054.053c.15.164.304.321.464.471.696.654 1.53.987 2.378.966a3.601 3.601 0 0 0 3.33-2.617 3.596 3.596 0 0 0-2.364-4.27 3.603 3.603 0 0 0-4.381 2.158c-.14.341-.223.696-.246 1.054a3.598 3.598 0 0 0 2.22 3.407l.02.008a3.59 3.59 0 0 1-2.484.582 3.6 3.6 0 0 1-2.903-2.193l-.007-.02a3.591 3.591 0 0 1 .552-3.676 3.593 3.593 0 0 1 5.082 0 3.592 3.592 0 0 1 0 5.082c-1.403 1.403-3.679 1.403-5.082 0l-5.083-5.083z"></path></svg>
+</a>
+<a aria-label="GitHub" class="text-[var(--dark-navy)] hover:text-[var(--accent-red)] transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+</a>
+<a aria-label="YouTube" class="text-[var(--dark-navy)] hover:text-[var(--accent-red)] transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+</a>
+</div>
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-[var(--dark-navy)] text-[var(--cream)] hover:bg-[var(--accent-red)] hover:scale-110 transition-all duration-300">
+<span class="material-symbols-outlined text-xl font-bold">search</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-6 md:px-20 lg:px-40 py-20">
+<div class="flex flex-col gap-8 mb-20">
+<h1 class="text-[var(--dark-navy)] text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter">Blog Archive</h1>
+<p class="text-[var(--dark-navy)]/80 text-xl md:text-2xl max-w-3xl leading-relaxed font-medium">
+                A curated collection of thoughts on design systems, creative engineering, and the future of digital experiences.
+            </p>
+</div>
+<div class="flex gap-4 mb-16 flex-wrap items-center">
+<div class="flex h-12 items-center justify-center rounded-full bg-[var(--accent-red)] px-8 cursor-pointer shadow-lg shadow-[var(--accent-red)]/20 hover:-translate-y-1 transition-all duration-300">
+<p class="text-white text-xs font-black uppercase tracking-widest">All Posts</p>
+</div>
+<div class="flex h-12 items-center justify-center rounded-full bg-white border border-[var(--dark-navy)]/10 px-8 hover:border-[var(--accent-red)] hover:text-[var(--accent-red)] hover:-translate-y-1 transition-all duration-300 cursor-pointer card-shadow">
+<p class="text-[var(--dark-navy)] text-xs font-black uppercase tracking-widest">Sessions</p>
+</div>
+<div class="flex h-12 items-center justify-center rounded-full bg-white border border-[var(--dark-navy)]/10 px-8 hover:border-[var(--accent-red)] hover:text-[var(--accent-red)] hover:-translate-y-1 transition-all duration-300 cursor-pointer card-shadow">
+<p class="text-[var(--dark-navy)] text-xs font-black uppercase tracking-widest">Design</p>
+</div>
+<div class="flex h-12 items-center justify-center rounded-full bg-white border border-[var(--dark-navy)]/10 px-8 hover:border-[var(--accent-red)] hover:text-[var(--accent-red)] hover:-translate-y-1 transition-all duration-300 cursor-pointer card-shadow">
+<p class="text-[var(--dark-navy)] text-xs font-black uppercase tracking-widest">Tech</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
+<article class="group flex flex-col gap-6 cursor-pointer">
+<div class="w-full aspect-[4/3] bg-[var(--dark-navy)]/5 rounded-xl overflow-hidden relative card-shadow border border-[var(--dark-navy)]/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Abstract minimalist desk setup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBy4BEw2e5ryF9slb6QR-zHJxYwtkFMuidTLCUyT1YsF19MY8RKUEYU2trbqVI6PWrZdCYl5fLiqzsOsAcrI9PS69txcj3yn6a22zQKzpFkn-UHBSs_tSORFAtZRMV1J5sEYgRpQ5jcKMwrBJ3aoXOR8SQ0TfTZ9gnPCGiTSZtQO60WhmWMhXZ9r5W0UT-SM8TxS4K6tOvO9yXbcxTzHNuj36knRKBqFk6NPUPAHCgVzzZJlR8OEik3D6zusB9yqScEFentcvCUR5Rm");'></div>
+<div class="absolute top-5 left-5">
+<span class="bg-[var(--accent-red)] text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-lg">Sessions</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 px-2">
+<h3 class="text-[var(--dark-navy)] text-2xl font-black leading-tight group-hover:text-[var(--accent-red)] transition-colors duration-300">The Art of Session Planning</h3>
+<p class="text-[var(--dark-navy)]/70 text-base font-medium leading-relaxed line-clamp-2">Mastering the flow of collaborative creative sessions to maximize output and team synergy.</p>
+<div class="flex items-center gap-4 mt-2 text-[var(--dark-navy)]/50 text-[10px] font-black uppercase tracking-widest">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm font-bold">schedule</span>5 MIN READ</span>
+<span class="w-1 h-1 bg-[var(--dark-navy)]/20 rounded-full"></span>
+<span>OCT 24, 2023</span>
+</div>
+</div>
+</article>
+<article class="group flex flex-col gap-6 cursor-pointer">
+<div class="w-full aspect-[4/3] bg-[var(--dark-navy)]/5 rounded-xl overflow-hidden relative card-shadow border border-[var(--dark-navy)]/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Typography specimen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdt_1P-xTYzp5QRrOImYzdoB9FGd_qwXCC2GM3bu31S0OXINd7QI0p4ceq9WNnP_TiZlR0YPNgBJqypQgV2rqd2hZ0_mKA_TLKrw4enUNkPr-nh1jm69pypNsL3-CPQsHmGb_nJsuAKX5RPJNCvHV5HwLV5cIPMa7rMHkfN7r04e2f-bl9PP2MZUsU75BbBB_C-gHsYygi-JFOs44-ixaOyGnYUkiMEz9rGJ1o3VURGrMcle-XVDUa8evntdEO22-wotvlKXUFQPdA");'></div>
+<div class="absolute top-5 left-5">
+<span class="bg-[var(--accent-red)] text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-lg">Design</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 px-2">
+<h3 class="text-[var(--dark-navy)] text-2xl font-black leading-tight group-hover:text-[var(--accent-red)] transition-colors duration-300">Designing with Inter</h3>
+<p class="text-[var(--dark-navy)]/70 text-base font-medium leading-relaxed line-clamp-2">Why Inter has become the definitive font of choice for modern digital interfaces and apps.</p>
+<div class="flex items-center gap-4 mt-2 text-[var(--dark-navy)]/50 text-[10px] font-black uppercase tracking-widest">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm font-bold">schedule</span>8 MIN READ</span>
+<span class="w-1 h-1 bg-[var(--dark-navy)]/20 rounded-full"></span>
+<span>OCT 22, 2023</span>
+</div>
+</div>
+</article>
+<article class="group flex flex-col gap-6 cursor-pointer">
+<div class="w-full aspect-[4/3] bg-[var(--dark-navy)]/5 rounded-xl overflow-hidden relative card-shadow border border-[var(--dark-navy)]/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Code on screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQwK0DWorPJPExpbz8cGMn5Rsbl8G8Cer_vy63cIiucENxVDWqYXVd3okU3QdgRaKYzoI1KCaNUpMquEZPGM4Imt1DuKTBagNiTiBM24cFlbZlNRgaKUNL_wuONq33dUmcCmSUkrzOWpPoU8a2GJ8oor5bp_Y3AXW-8I_6hMEaDPEeHbRMdx9GT9zKPujLZjQXRT0fMTOBLLdViZDYng4F2JJT1AP8o2z7y5mt6pq4E_1rfXQ0ZuueHVc0x7yjJd2wXA7ypAkmas7M");'></div>
+<div class="absolute top-5 left-5">
+<span class="bg-[var(--accent-red)] text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-lg">Tech</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 px-2">
+<h3 class="text-[var(--dark-navy)] text-2xl font-black leading-tight group-hover:text-[var(--accent-red)] transition-colors duration-300">Modern Web Workflows</h3>
+<p class="text-[var(--dark-navy)]/70 text-base font-medium leading-relaxed line-clamp-2">Streamlining development with the latest toolsets, from Tailwind to CI/CD pipelines.</p>
+<div class="flex items-center gap-4 mt-2 text-[var(--dark-navy)]/50 text-[10px] font-black uppercase tracking-widest">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm font-bold">schedule</span>4 MIN READ</span>
+<span class="w-1 h-1 bg-[var(--dark-navy)]/20 rounded-full"></span>
+<span>OCT 20, 2023</span>
+</div>
+</div>
+</article>
+<article class="group flex flex-col gap-6 cursor-pointer">
+<div class="w-full aspect-[4/3] bg-[var(--dark-navy)]/5 rounded-xl overflow-hidden relative card-shadow border border-[var(--dark-navy)]/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Workspace" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnUbwMC5gUfoCQLX_mJC-Wk5ZoQwCMUuAyvrXiuQBmvIj8UnCTbMo6XfsEgM9LDX3nFg2-hqk5GwsZzfaMLmIaojm04UJ8L1mrAGKTcGVVR5kCOJeFTdKMUnj6DhpyxMK8EEzZ0oV1HJFJDjV7bG0E9KH8_FoAlAbXKjQ71XlnJQqoKP55YJX9KpzYkFfzXzHZhRmK-Tsh63nWW8tQLX7sYSvQKnNOvRvGvKQ71J6h0vL6mamZIKaTmg4ONpxvf890TRBttR-w7IFK");'></div>
+<div class="absolute top-5 left-5">
+<span class="bg-[var(--accent-red)] text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-lg">Lifestyle</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 px-2">
+<h3 class="text-[var(--dark-navy)] text-2xl font-black leading-tight group-hover:text-[var(--accent-red)] transition-colors duration-300">Minimalist Workspaces</h3>
+<p class="text-[var(--dark-navy)]/70 text-base font-medium leading-relaxed line-clamp-2">Creating a distraction-free environment that fosters deep work and creative flow.</p>
+<div class="flex items-center gap-4 mt-2 text-[var(--dark-navy)]/50 text-[10px] font-black uppercase tracking-widest">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm font-bold">schedule</span>6 MIN READ</span>
+<span class="w-1 h-1 bg-[var(--dark-navy)]/20 rounded-full"></span>
+<span>OCT 18, 2023</span>
+</div>
+</div>
+</article>
+<article class="group flex flex-col gap-6 cursor-pointer">
+<div class="w-full aspect-[4/3] bg-[var(--dark-navy)]/5 rounded-xl overflow-hidden relative card-shadow border border-[var(--dark-navy)]/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="UI interface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAceHkUxSrCRs8k8m51WrIfD1wx5VgbkXl4-_W9ZCExpaquyKDKQb7MrjqSTks82jyXZ7ZVQu8gERlfwXAds8hRtaMr2k8ohCUea28MkjIR1cJO5J4yYTM98T06V4ud5wF_mriGgr5zXM8OS9h5Al68GdwIp_JTBOKuRQvSQ6Fk5HPXyibtV9Z7cIrczaDC76j7IqXsXVBbK8MsBAKPT_sSYRebKjfl8g2cXFRqEdd58K95rAwsghpqFUt6zmgItggn3x0pbapYgVcj");'></div>
+<div class="absolute top-5 left-5">
+<span class="bg-[var(--accent-red)] text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-lg">Design</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 px-2">
+<h3 class="text-[var(--dark-navy)] text-2xl font-black leading-tight group-hover:text-[var(--accent-red)] transition-colors duration-300">The Future of UI</h3>
+<p class="text-[var(--dark-navy)]/70 text-base font-medium leading-relaxed line-clamp-2">Predictions for the next decade of digital design and immersive experiences.</p>
+<div class="flex items-center gap-4 mt-2 text-[var(--dark-navy)]/50 text-[10px] font-black uppercase tracking-widest">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm font-bold">schedule</span>10 MIN READ</span>
+<span class="w-1 h-1 bg-[var(--dark-navy)]/20 rounded-full"></span>
+<span>OCT 15, 2023</span>
+</div>
+</div>
+</article>
+<article class="group flex flex-col gap-6 cursor-pointer">
+<div class="w-full aspect-[4/3] bg-[var(--dark-navy)]/5 rounded-xl overflow-hidden relative card-shadow border border-[var(--dark-navy)]/5">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Office talk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_sXEGyU091xxZYvXSd6Uza1HU9gyv2JMZ5IggKV6Er6oqGf5gPJifzrucH52LlbGIg29QjXgPw7DXNcQInHjELFSIEIl-0oS04m7HdZ9u-uuDiRkRDekNx5BA8dtYl9GFyDOuudYIfFuFMkow_Yc_E5FAPmyCC_v1yaUghXzYIbSiSJ3lQ7HuV_Gf8aS2BsXG40nBQNSdROWQh7Jfw9QKYcqzIE_h8zlh-z9KrCJECyOlz2mmW-sA9BHDU07DC1T9llhZ1wyull-t");'></div>
+<div class="absolute top-5 left-5">
+<span class="bg-[var(--accent-red)] text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-lg">Sessions</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 px-2">
+<h3 class="text-[var(--dark-navy)] text-2xl font-black leading-tight group-hover:text-[var(--accent-red)] transition-colors duration-300">Effective Mentoring</h3>
+<p class="text-[var(--dark-navy)]/70 text-base font-medium leading-relaxed line-clamp-2">Building long-term growth through shared knowledge and structured guidance.</p>
+<div class="flex items-center gap-4 mt-2 text-[var(--dark-navy)]/50 text-[10px] font-black uppercase tracking-widest">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm font-bold">schedule</span>7 MIN READ</span>
+<span class="w-1 h-1 bg-[var(--dark-navy)]/20 rounded-full"></span>
+<span>OCT 12, 2023</span>
+</div>
+</div>
+</article>
+</div>
+<div class="flex pt-24 pb-12 justify-center">
+<button class="group relative flex min-w-[280px] cursor-pointer items-center justify-center rounded-xl h-16 px-10 bg-[var(--dark-navy)] text-white text-sm font-black uppercase tracking-[0.25em] hover:bg-[var(--accent-red)] transition-all duration-300 hover:scale-[1.02] shadow-xl shadow-[var(--dark-navy)]/20 hover:shadow-[var(--accent-red)]/30">
+<span>Load More Articles</span>
+</button>
+</div>
+</main>
+<footer class="border-t border-[var(--dark-navy)]/10 px-6 md:px-20 lg:px-40 py-24 bg-[var(--dark-navy)] text-[var(--cream)]">
+<div class="flex flex-col md:flex-row justify-between items-start gap-16">
+<div class="flex flex-col gap-8 max-w-sm">
+<div class="flex items-center gap-3">
+<div class="size-8 text-[var(--dark-navy)] bg-[var(--cream)] rounded flex items-center justify-center">
+<svg class="size-5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 3H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H14C16.2091 21 18 19.2091 18 17V7L16 3Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="text-2xl font-black tracking-tighter uppercase">Journal</p>
+</div>
+<p class="text-[var(--cream)]/60 text-base leading-relaxed">
+                    Exploring the intersections of code and design. A digital space for documenting creative processes and technical findings.
+                </p>
+<p class="text-[var(--cream)]/40 text-[10px] uppercase font-black tracking-[0.3em]">© 2024 Journal. Built with Precision.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-16">
+<div class="flex flex-col gap-6">
+<p class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--cream)]/30">Network</p>
+<nav class="flex flex-col gap-4">
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors" href="#">LinkedIn</a>
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors" href="#">X / Twitter</a>
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors" href="#">GitHub</a>
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors" href="#">Bluesky</a>
+</nav>
+</div>
+<div class="flex flex-col gap-6">
+<p class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--cream)]/30">Legal</p>
+<nav class="flex flex-col gap-4">
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors" href="#">Privacy</a>
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors" href="#">Terms</a>
+<a class="text-sm font-bold hover:text-[var(--accent-red)] transition-colors" href="#">Cookies</a>
+</nav>
+</div>
+<div class="flex flex-col gap-6 col-span-2 sm:col-span-1">
+<p class="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--cream)]/30">Connect</p>
+<div class="flex gap-4">
+<a class="flex items-center justify-center size-10 rounded-full border border-[var(--cream)]/10 hover:bg-[var(--accent-red)] hover:border-[var(--accent-red)] transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-xl">alternate_email</span>
+</a>
+<a class="flex items-center justify-center size-10 rounded-full border border-[var(--cream)]/10 hover:bg-[var(--accent-red)] hover:border-[var(--accent-red)] transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-xl">rss_feed</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Art of Session Planning - Journal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;family=Lora:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --dark-navy: #232F34;
+            --cream: #E8E9E0;
+            --accent-red: #F24849;
+        }
+        @layer base {
+            body {
+                @apply bg-[var(--cream)] text-[var(--dark-navy)];
+            }
+            .article-content h2 {
+                @apply text-3xl font-black tracking-tight mt-16 mb-6 text-[var(--dark-navy)] leading-tight;
+            }
+            .article-content p {
+                @apply text-xl leading-[1.8] mb-10 text-[var(--dark-navy)] font-serif;
+            }
+            .article-content blockquote {
+                @apply border-l-[12px] border-[var(--accent-red)] pl-10 py-4 my-16 italic text-3xl font-serif text-[var(--dark-navy)] leading-snug;
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#232F34",
+                        "accent": "#F24849",
+                        "page-bg": "#E8E9E0",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Lora", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display min-h-screen antialiased">
+<div class="relative flex flex-col min-h-screen w-full overflow-x-hidden">
+<header class="flex items-center justify-between border-b border-[var(--dark-navy)]/10 px-6 md:px-20 lg:px-40 py-6 bg-[var(--cream)] sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="text-[var(--dark-navy)]">
+<svg class="size-7" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4h16v16H4z" stroke-linecap="square"></path>
+<path d="M12 4v16" stroke-linecap="square"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black leading-tight tracking-tighter uppercase text-[var(--dark-navy)]">Journal</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 md:gap-10 items-center">
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-xs font-black uppercase tracking-widest hover:text-[var(--accent-red)] transition-colors border-b-2 border-[var(--accent-red)] text-[var(--dark-navy)] pb-1" href="#">Blog</a>
+<a class="text-xs font-black uppercase tracking-widest hover:text-[var(--accent-red)] transition-colors text-[var(--dark-navy)]/60 pb-1" href="#">Sessions</a>
+<a class="text-xs font-black uppercase tracking-widest hover:text-[var(--accent-red)] transition-colors text-[var(--dark-navy)]/60 pb-1" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4 border-l border-[var(--dark-navy)]/10 pl-8 h-8">
+<div class="flex items-center gap-5 text-[var(--dark-navy)]">
+<a class="hover:text-[var(--accent-red)] transition-colors" href="#"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+<a class="hover:text-[var(--accent-red)] transition-colors" href="#"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+<a class="hover:text-[var(--accent-red)] transition-colors" href="#"><i class="fa-brands fa-github text-lg"></i></a>
+</div>
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-[var(--dark-navy)] text-[var(--cream)] hover:bg-[var(--accent-red)] transition-colors ml-2">
+<span class="material-symbols-outlined text-xl">search</span>
+</button>
+</div>
+</div>
+</header>
+<div class="w-full h-[70vh] relative overflow-hidden">
+<div class="w-full h-full bg-center bg-cover scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBy4BEw2e5ryF9slb6QR-zHJxYwtkFMuidTLCUyT1YsF19MY8RKUEYU2trbqVI6PWrZdCYl5fLiqzsOsAcrI9PS69txcj3yn6a22zQKzpFkn-UHBSs_tSORFAtZRMV1J5sEYgRpQ5jcKMwrBJ3aoXOR8SQ0TfTZ9gnPCGiTSZtQO60WhmWMhXZ9r5W0UT-SM8TxS4K6tOvO9yXbcxTzHNuj36knRKBqFk6NPUPAHCgVzzZJlR8OEik3D6zusB9yqScEFentcvCUR5Rm");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[var(--dark-navy)]/20 to-transparent"></div>
+</div>
+<main class="flex-1 px-6 md:px-20 lg:px-40 py-24 flex flex-col items-center">
+<article class="max-w-[720px] w-full">
+<div class="flex flex-col gap-8 mb-20 text-center items-center">
+<div class="inline-block">
+<span class="bg-[var(--accent-red)] text-white text-[11px] font-black uppercase tracking-[0.25em] px-5 py-2">Sessions</span>
+</div>
+<h1 class="text-[var(--dark-navy)] text-5xl md:text-7xl font-black leading-[1.05] tracking-tighter">
+                    The Art of Session Planning
+                </h1>
+<div class="flex flex-wrap items-center justify-center gap-8 py-10 border-y border-[var(--dark-navy)]/10 w-full mt-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-[var(--dark-navy)] flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-white text-2xl">person</span>
+</div>
+<div class="text-left">
+<p class="text-[10px] uppercase font-bold tracking-widest text-[var(--dark-navy)]/40 mb-0.5">Author</p>
+<p class="text-sm font-black text-[var(--dark-navy)]">Alex Rivera</p>
+</div>
+</div>
+<div class="text-left">
+<p class="text-[10px] uppercase font-bold tracking-widest text-[var(--dark-navy)]/40 mb-0.5">Published</p>
+<p class="text-sm font-black text-[var(--dark-navy)] uppercase">Oct 24, 2023</p>
+</div>
+<div class="text-left">
+<p class="text-[10px] uppercase font-bold tracking-widest text-[var(--dark-navy)]/40 mb-0.5">Reading Time</p>
+<p class="text-sm font-black text-[var(--dark-navy)] uppercase">8 Min Read</p>
+</div>
+</div>
+</div>
+<div class="article-content">
+<p>
+                    Creativity often feels like a lightning strike—unpredictable and sudden. However, the most successful creative teams know that consistent innovation isn't accidental; it's the result of meticulously planned collaborative sessions. The art of session planning lies in the balance between rigid structure and total freedom.
+                </p>
+<h2>Setting the Stage</h2>
+<p>
+                    Before a single word is spoken or a sticky note is placed, the environment must be primed. This isn't just about finding a room with enough whiteboards; it's about psychological safety. Every participant needs to feel that the space is a "no-judgment zone" where even the wildest ideas are welcomed.
+                </p>
+<blockquote>
+                    "The goal of a creative session is not to find the right answer immediately, but to create the largest possible landscape of possibilities."
+                </blockquote>
+<p>
+                    When we approach session planning, we begin with the end in mind. Are we looking for feature ideas? Solving a user pain point? Or defining a brand's visual identity? Without a clear objective, sessions tend to drift into unproductive circular discussions.
+                </p>
+<h2>The Three-Act Structure</h2>
+<p>
+                    Just like a great story, a well-planned session follows a three-act structure. Act I is Divergence: we open the doors wide. No idea is too small. Act II is Emergence: patterns start to appear from the chaos. Act III is Convergence: we narrow down the options to the most viable and impactful solutions.
+                </p>
+<p>
+                    Throughout these phases, the facilitator's role is critical. They act as the guardian of time and the promoter of equal participation. In my experience, some of the most profound insights come from the quietest people in the room, provided they are given the platform to speak.
+                </p>
+<h2>Incorporating Physicality</h2>
+<p>
+                    We live in a digital-first world, but there is undeniable power in physical tools. Large-scale paper, colorful pens, and tactile objects can break the "monitor-glance" habit and engage different parts of the brain. Moving around the room changes the perspective and keeps energy levels high.
+                </p>
+</div>
+<div class="mt-24 pt-12 border-t border-[var(--dark-navy)]/10 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-wrap gap-2">
+<span class="px-5 py-2 bg-white border border-[var(--dark-navy)]/10 text-[10px] font-black uppercase tracking-widest hover:border-[var(--accent-red)] transition-colors cursor-default">Workflow</span>
+<span class="px-5 py-2 bg-white border border-[var(--dark-navy)]/10 text-[10px] font-black uppercase tracking-widest hover:border-[var(--accent-red)] transition-colors cursor-default">Productivity</span>
+<span class="px-5 py-2 bg-white border border-[var(--dark-navy)]/10 text-[10px] font-black uppercase tracking-widest hover:border-[var(--accent-red)] transition-colors cursor-default">Teamwork</span>
+</div>
+<div class="flex items-center gap-6">
+<p class="text-[10px] font-black uppercase tracking-widest text-[var(--dark-navy)]/40">Share this</p>
+<div class="flex gap-6">
+<a class="text-[var(--dark-navy)] hover:text-[var(--accent-red)] transition-all transform hover:-translate-y-1" href="#"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+<a class="text-[var(--dark-navy)] hover:text-[var(--accent-red)] transition-all transform hover:-translate-y-1" href="#"><i class="fa-brands fa-x-twitter text-xl"></i></a>
+<a class="text-[var(--dark-navy)] hover:text-[var(--accent-red)] transition-all transform hover:-translate-y-1" href="#"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+</div>
+</div>
+</div>
+</article>
+</main>
+<section class="px-6 md:px-20 lg:px-40 py-32 bg-[var(--dark-navy)]/5 border-t border-[var(--dark-navy)]/10">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-2">Recommended</h2>
+<div class="h-1 w-24 bg-[var(--accent-red)]"></div>
+</div>
+<button class="px-8 py-3 bg-[var(--accent-red)] text-white text-xs font-black uppercase tracking-widest hover:opacity-90 transition-opacity">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="group flex flex-col gap-6">
+<div class="w-full aspect-[4/3] bg-[var(--dark-navy)]/5 overflow-hidden relative">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdt_1P-xTYzp5QRrOImYzdoB9FGd_qwXCC2GM3bu31S0OXINd7QI0p4ceq9WNnP_TiZlR0YPNgBJqypQgV2rqd2hZ0_mKA_TLKrw4enUNkPr-nh1jm69pypNsL3-CPQsHmGb_nJsuAKX5RPJNCvHV5HwLV5cIPMa7rMHkfN7r04e2f-bl9PP2MZUsU75BbBB_C-gHsYygi-JFOs44-ixaOyGnYUkiMEz9rGJ1o3VURGrMcle-XVDUa8evntdEO22-wotvlKXUFQPdA");'></div>
+<div class="absolute top-6 left-6">
+<span class="bg-[var(--accent-red)] text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5">Design</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="text-[var(--dark-navy)]/40 text-[10px] font-black uppercase tracking-widest">Oct 22, 2023</div>
+<h3 class="text-[var(--dark-navy)] text-2xl font-black leading-tight group-hover:text-[var(--accent-red)] transition-colors">Designing with Inter: Typography Mastery</h3>
+<a class="text-[var(--accent-red)] text-[11px] font-black uppercase tracking-widest mt-2 flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col gap-6">
+<div class="w-full aspect-[4/3] bg-[var(--dark-navy)]/5 overflow-hidden relative">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQwK0DWorPJPExpbz8cGMn5Rsbl8G8Cer_vy63cIiucENxVDWqYXVd3okU3QdgRaKYzoI1KCaNUpMquEZPGM4Imt1DuKTBagNiTiBM24cFlbZlNRgaKUNL_wuONq33dUmcCmSUkrzOWpPoU8a2GJ8oor5bp_Y3AXW-8I_6hMEaDPEeHbRMdx9GT9zKPujLZjQXRT0fMTOBLLdViZDYng4F2JJT1AP8o2z7y5mt6pq4E_1rfXQ0ZuueHVc0x7yjJd2wXA7ypAkmas7M");'></div>
+<div class="absolute top-6 left-6">
+<span class="bg-[var(--accent-red)] text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5">Tech</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="text-[var(--dark-navy)]/40 text-[10px] font-black uppercase tracking-widest">Oct 20, 2023</div>
+<h3 class="text-[var(--dark-navy)] text-2xl font-black leading-tight group-hover:text-[var(--accent-red)] transition-colors">Modern Web Workflows for Small Teams</h3>
+<a class="text-[var(--accent-red)] text-[11px] font-black uppercase tracking-widest mt-2 flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col gap-6">
+<div class="w-full aspect-[4/3] bg-[var(--dark-navy)]/5 overflow-hidden relative">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-1000 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnUbwMC5gUfoCQLX_mJC-Wk5ZoQwCMUuAyvrXiuQBmvIj8UnCTbMo6XfsEgM9LDX3nFg2-hqk5GwsZzfaMLmIaojm04UJ8L1mrAGKTcGVVR5kCOJeFTdKMUnj6DhpyxMK8EEzZ0oV1HJFJDjV7bG0E9KH8_FoAlAbXKjQ71XlnJQqoKP55YJX9KpzYkFfzXzHZhRmK-Tsh63nWW8tQLX7sYSvQKnNOvRvGvKQ71J6h0vL6mamZIKaTmg4ONpxvf890TRBttR-w7IFK");'></div>
+<div class="absolute top-6 left-6">
+<span class="bg-[var(--accent-red)] text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5">Lifestyle</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="text-[var(--dark-navy)]/40 text-[10px] font-black uppercase tracking-widest">Oct 18, 2023</div>
+<h3 class="text-[var(--dark-navy)] text-2xl font-black leading-tight group-hover:text-[var(--accent-red)] transition-colors">Minimalist Workspaces: Less is More</h3>
+<a class="text-[var(--accent-red)] text-[11px] font-black uppercase tracking-widest mt-2 flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+</body></html>

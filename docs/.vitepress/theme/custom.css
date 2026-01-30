@@ -1,0 +1,279 @@
+/* Design System - rsdk.dev */
+
+/* ===== Font Imports ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+/* ===== CSS Variables ===== */
+:root {
+  --dark-navy: #232F34;
+  --cream: #E8E9E0;
+  --accent-red: #F24849;
+  --primary: #232F34;
+  --accent: #F24849;
+  --page-bg: #E8E9E0;
+}
+
+/* ===== Base Styles ===== */
+body {
+  background-color: var(--cream);
+  color: var(--dark-navy);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Typography ===== */
+.font-display {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Lora', serif;
+}
+
+/* ===== Utility Classes ===== */
+.card-shadow {
+  box-shadow: 0 4px 20px -2px rgba(35, 47, 52, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-shadow:hover {
+  box-shadow: 0 10px 30px -5px rgba(35, 47, 52, 0.1);
+}
+
+/* ===== Blog Article Content Styles ===== */
+.article-content {
+  font-family: 'Lora', serif;
+}
+
+.article-content h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.875rem; /* 30px */
+  font-weight: 900;
+  line-height: 1.2;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-navy);
+  letter-spacing: -0.025em;
+}
+
+.article-content p {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  color: var(--dark-navy);
+}
+
+.article-content blockquote {
+  border-left: 12px solid var(--accent-red);
+  padding-left: 2.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 4rem 0;
+  font-style: italic;
+  font-size: 1.875rem; /* 30px */
+  font-family: 'Lora', serif;
+  color: var(--dark-navy);
+  line-height: 1.4;
+}
+
+/* ===== Blog Grid & Cards ===== */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+
+.blog-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: rgba(35, 47, 52, 0.05);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(35, 47, 52, 0.05);
+}
+
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease-out;
+}
+
+.blog-card:hover .blog-card-image img {
+  transform: scale(1.05);
+}
+
+/* ===== Tag Pills ===== */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tag-pill.active {
+  background-color: var(--accent-red);
+  color: white;
+  box-shadow: 0 10px 25px -5px rgba(242, 72, 73, 0.2);
+  transform: translateY(-2px);
+}
+
+.tag-pill.inactive {
+  background-color: white;
+  border: 1px solid rgba(35, 47, 52, 0.1);
+  color: var(--dark-navy);
+}
+
+.tag-pill.inactive:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+  transform: translateY(-2px);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 280px;
+  height: 4rem;
+  padding: 0 2.5rem;
+  background-color: var(--dark-navy);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 50px -10px rgba(35, 47, 52, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-red);
+  transform: scale(1.02);
+  box-shadow: 0 20px 50px -10px rgba(242, 72, 73, 0.3);
+}
+
+/* ===== Material Icons ===== */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+/* ===== VitePress Overrides ===== */
+.VPNavBar {
+  background-color: rgba(232, 233, 224, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(35, 47, 52, 0.1);
+}
+
+.VPNav .title {
+  font-weight: 900 !important;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.VPNav .link {
+  font-weight: 700 !important;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.VPNav .link:hover {
+  color: var(--accent-red) !important;
+}
+
+.VPFooter {
+  background-color: var(--dark-navy);
+  color: var(--cream);
+  border-top: 1px solid rgba(35, 47, 52, 0.1);
+}
+
+/* ===== Custom Layout Styles ===== */
+.custom-layout {
+  min-height: 100vh;
+  background-color: var(--cream);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 10rem;
+  }
+}
+
+/* ===== Line Clamp Utilities ===== */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
