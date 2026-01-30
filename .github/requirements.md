@@ -64,16 +64,15 @@ Always use the items image (defined in the frontmatter) in the header of the blo
 
 
 
-
-
-
-
-
 ## About me
 
-Create a new page with name "About me", be sure to add it to the Navigation too.
+Generate the about page for me. 
 
-Use the design file .github/design/about-me.html for the layout, but take a look at the /Blogs page, keep it in the same width and add a footer (like on the /Blogs page)
+Create a specific Vue layout for this page
+
+Add the footer component instead of the design from the about-me.html
+
+Use the design file .github/design/about-me.html for the layout
 
 
 
@@ -84,15 +83,28 @@ Use the design file .github/design/about-me.html for the layout, but take a look
 
 ## Sessions
 
-Create a seperate folder where my sessions are being saved, /docs/sessions
+Generate the sessions page for me. 
 
-Every sessions has it's own .md file. 
+Create a specific Vue layout for this page
 
-Every session .md file has the following items in the frontmatter;
+Create a seperate folder where my sessions (items) are being saved. Every session has it's own .md file
 
-* title
-* description
-* status (concept or published) 
-* date
-* tags (commaseperated multiple values, see chapter Tags)
+In the frontmatter of the .md files for sessions add the following settings:
+
+- Event
+- Location
+- Link
+- Date
+
+Add the footer component instead of the design from the sessions.html
+
+Use the design file .github/design/sessions.html for the layout
+
+Create 6 dummy sessions for me
+
+Create the timeline from the sessions.html design file 
+
+
+
+
 
