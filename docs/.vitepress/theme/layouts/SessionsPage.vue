@@ -41,7 +41,7 @@ function formatDate(dateString: string) {
 }
 
 function navigateToSession(url: string) {
-  window.location.href = url
+  window.open(url, '_blank')
 }
 </script>
 
@@ -88,7 +88,7 @@ function navigateToSession(url: string) {
                   <div 
                     class="session-card"
                     style="background-color: white; padding: 2rem; border-radius: 0.5rem; border: 1px solid rgba(35, 47, 52, 0.05); transition: all 0.3s ease; cursor: pointer;"
-                    @click="navigateToSession(session.url)"
+                    @click="navigateToSession(session.link)"
                     @mouseenter="$event.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)'"
                     @mouseleave="$event.currentTarget.style.boxShadow = 'none'"
                   >
@@ -103,8 +103,14 @@ function navigateToSession(url: string) {
                       {{ session.title }}
                     </h3>
                     
-                    <!-- Event and Location -->
-                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.875rem;">
+                    <!-- Event, Location, and Date -->
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; font-size: 0.875rem;">
+
+                      <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(35, 47, 52, 0.6);">
+                        <span class="material-symbols-outlined" style="font-size: 1.25rem;">calendar_today</span>
+                        <span>{{ new Date(session.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
+                      </div>
+
                       <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(35, 47, 52, 0.6);">
                         <span class="material-symbols-outlined" style="font-size: 1.25rem;">event</span>
                         <span>{{ session.event }}</span>
@@ -113,6 +119,7 @@ function navigateToSession(url: string) {
                         <span class="material-symbols-outlined" style="font-size: 1.25rem;">location_on</span>
                         <span>{{ session.location }}</span>
                       </div>
+
                     </div>
 
                     <p style="color: rgba(35, 47, 52, 0.7); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem;">
@@ -120,7 +127,8 @@ function navigateToSession(url: string) {
                     </p>
 
                     <a 
-                      :href="session.url"
+                      :href="session.link"
+                      target="_blank"
                       style="display: inline-flex; align-items: center; color: var(--accent-red); font-weight: 900; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.15em; transition: gap 0.3s ease; gap: 0.25rem;"
                       @click.stop
                     >

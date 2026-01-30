@@ -108,3 +108,16 @@ Create the timeline from the sessions.html design file
 
 
 
+
+## Home
+
+Generate the home page for me. 
+
+Create a specific Vue layout for this page
+
+Add the footer component instead of the design from the home.html
+
+Use the design file .github/design/home.html for the layout
+
+In the section "Latest from blog", use the styling and structure from the blogs bage (BlogOverview.vue)
+
