@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "rsdk.dev",
-  description: "A VitePress Site",
+  title: "arjanrijsdijk",
+  description: "My Power Platform Blog",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
