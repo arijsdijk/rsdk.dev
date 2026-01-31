@@ -221,8 +221,13 @@ body {
   text-transform: uppercase;
 }
 
+.VPNavBar .logo {
+  height: 32px !important;
+  width: auto !important;
+}
+
 .VPNav .link {
-  font-weight: 700 !important;
+  font-weight: 900 !important;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -230,6 +235,16 @@ body {
 }
 
 .VPNav .link:hover {
+  color: var(--accent-red) !important;
+}
+
+.VPNav .link.active {
+  color: var(--accent-red) !important;
+}
+
+/* VitePress nav menu link active state */
+.VPNavBarMenuLink.active,
+.VPLink.active {
   color: var(--accent-red) !important;
 }
 

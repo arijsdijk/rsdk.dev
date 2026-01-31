@@ -18,7 +18,7 @@
             Exploring the intersections of Power Platform and modern development. A digital space for sharing knowledge and experiences.
           </p>
           <p style="color: rgba(232, 233, 224, 0.4); font-size: 0.625rem; text-transform: uppercase; font-weight: 900; letter-spacing: 0.3em; margin: 0;">
-            © 2026 rsdk.dev
+            © 2026 arjanrijsdijk.com
           </p>
         </div>
       </div>

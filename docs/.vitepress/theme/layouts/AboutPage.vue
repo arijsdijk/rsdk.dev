@@ -13,9 +13,9 @@ const { frontmatter } = useData()
         <!-- Profile Image -->
         <div style="position: relative; margin-bottom: 3rem;">
           <div style="position: absolute; inset: 0; border-radius: 9999px; border: 2px solid var(--dark-navy); transform: translate(0.5rem, 0.5rem); z-index: -1;"></div>
-          <div style="width: 12rem; height: 12rem; border-radius: 9999px; overflow: hidden; border: 2px solid var(--dark-navy); background-color: white;">
+          <div style="width: 18rem; height: 18rem; border-radius: 9999px; overflow: hidden; border: 2px solid var(--dark-navy); background-color: white;">
             <img 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy4BEw2e5ryF9slb6QR-zHJxYwtkFMuidTLCUyT1YsF19MY8RKUEYU2trbqVI6PWrZdCYl5fLiqzsOsAcrI9PS69txcj3yn6a22zQKzpFkn-UHBSs_tSORFAtZRMV1J5sEYgRpQ5jcKMwrBJ3aoXOR8SQ0TfTZ9gnPCGiTSZtQO60WhmWMhXZ9r5W0UT-SM8TxS4K6tOvO9yXbcxTzHNuj36knRKBqFk6NPUPAHCgVzzZJlR8OEik3D6zusB9yqScEFentcvCUR5Rm"
+              src="/assets/aboutme.jpg"
               alt="Arjan Rijsdijk" 
               style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: all 0.7s ease;"
               @mouseenter="$event.target.style.filter = 'grayscale(0%)'"

@@ -51,8 +51,9 @@ function navigateToPost(url: string) {
 <template>
   <div class="custom-layout">
     <!-- Hero Section -->
-    <section style="position: relative; padding: 6rem 1.5rem 10rem; background: radial-gradient(circle at 100% 0%, rgba(242, 72, 73, 0.05) 0%, transparent 50%);">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+    <section style="position: relative; padding: 6rem 1.5rem 10rem; background-image: url('/assets/aboutme-3.jpg'); background-size: 110%; background-position: right center; background-repeat: no-repeat;">
+      <div style="position: absolute; inset: 0; background: rgba(232, 233, 224, 0.75);"></div>
+      <div style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
         <span style="display: inline-block; background-color: rgba(242, 72, 73, 0.1); color: var(--accent-red); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; padding: 0.5rem 1rem; border-radius: 9999px; margin-bottom: 2rem;">
           Personal Blog &amp; Portfolio
         </span>

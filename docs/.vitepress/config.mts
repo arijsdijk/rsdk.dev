@@ -2,10 +2,12 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "arjanrijsdijk",
+  title: "arjanrijsdijk.com",
   description: "My Power Platform Blog",
+  appearance: false,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/assets/logo.svg',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Blog', link: '/blog' },
