@@ -54,12 +54,13 @@ function navigateToPost(url: string) {
     <section style="position: relative; padding: 6rem 1.5rem 10rem; background-image: url('/assets/aboutme-3.jpg'); background-size: 110%; background-position: right center; background-repeat: no-repeat;">
       <div style="position: absolute; inset: 0; background: rgba(232, 233, 224, 0.75);"></div>
       <div style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+
         <span style="display: inline-block; background-color: rgba(242, 72, 73, 0.1); color: var(--accent-red); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; padding: 0.5rem 1rem; border-radius: 9999px; margin-bottom: 2rem;">
-          Personal Blog &amp; Portfolio
+          My Personal Blog
         </span>
         
         <h1 style="color: var(--dark-navy); font-size: 3.75rem; font-weight: 900; line-height: 0.85; letter-spacing: -0.05em; margin-bottom: 2.5rem; max-width: 80rem;">
-          Welcome to my<br />Power Platform<br />blog
+          All Things<br />Power Platform<br />Blog
         </h1>
         
         <p style="color: rgba(35, 47, 52, 0.7); font-size: 1.25rem; max-width: 42rem; line-height: 1.75; font-weight: 500; margin-bottom: 3rem;">
