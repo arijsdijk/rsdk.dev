@@ -1,6 +1,10 @@
 import { defineConfig } from 'vitepress'
-import { resolve } from 'path'
+import { fileURLToPath } from 'url'
+import { resolve, dirname } from 'path'
 import { copyFileSync, mkdirSync, existsSync, readdirSync } from 'fs'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // Build hook to copy blog banner images to dist folder
 function copyBlogImages() {
@@ -9,10 +13,10 @@ function copyBlogImages() {
   
   try {
     const blogFolders = readdirSync(blogsDir, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name)
+      .filter((dirent: any) => dirent.isDirectory())
+      .map((dirent: any) => dirent.name)
     
-    blogFolders.forEach(blogFolder => {
+    blogFolders.forEach((blogFolder: string) => {
       const sourceBanner = resolve(blogsDir, blogFolder, 'assets/banner.png')
       if (existsSync(sourceBanner)) {
         const destDir = resolve(distBlogsDir, blogFolder, 'assets')
@@ -46,7 +50,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Blog', link: '/blog' },
-      { text: 'Sessions', link: '/sessions' },
+      { text: 'Events', link: '/events' },
       { text: 'About', link: '/about' }
     ],
 

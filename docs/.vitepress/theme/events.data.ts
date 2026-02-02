@@ -10,7 +10,7 @@ export interface SessionData {
   url: string
 }
 
-export default createContentLoader('sessions/*.md', {
+export default createContentLoader('events/*.md', {
   transform(rawData): SessionData[] {
     return rawData
       .filter((page) => page.frontmatter.status === 'published')

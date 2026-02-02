@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { data as blogPosts } from '../blog.data'
-import { data as sessions } from '../sessions.data'
+import { data as events } from '../events.data'
 import { withBase } from 'vitepress'
 import Footer from '../components/Footer.vue'
 
@@ -10,9 +10,9 @@ const latestPosts = computed(() => {
   return blogPosts.slice(0, 3)
 })
 
-// Get latest 3 sessions for timeline
-const latestSessions = computed(() => {
-  return sessions.slice(0, 3)
+// Get latest 3 events for timeline
+const latestEvents = computed(() => {
+  return events.slice(0, 3)
 })
 
 function formatDate(dateString: string) {
@@ -77,12 +77,12 @@ function navigateToPost(url: string) {
             View blogposts
           </a>
           <a 
-            href="/sessions" 
+            href="/events" 
             style="display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; height: 4rem; padding: 0 2.5rem; background-color: white; border: 1px solid rgba(35, 47, 52, 0.1); color: var(--dark-navy); font-size: 0.875rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em; transition: all 0.3s ease; text-decoration: none;"
             @mouseenter="$event.target.style.borderColor = 'var(--accent-red)'; $event.target.style.color = 'var(--accent-red)'"
             @mouseleave="$event.target.style.borderColor = 'rgba(35, 47, 52, 0.1)'; $event.target.style.color = 'var(--dark-navy)'"
           >
-            View Sessions
+            View Events
           </a>
         </div>
       </div>
@@ -122,7 +122,7 @@ function navigateToPost(url: string) {
               ></div>
               <div style="position: absolute; top: 1.25rem; left: 1.25rem;">
                 <span style="background-color: var(--accent-red); color: white; font-size: 0.625rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; padding: 0.375rem 1rem; border-radius: 9999px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);">
-                  {{ getCategoryFromTags(post.tags) }}
+                  {{ post.subtitle }}
                 </span>
               </div>
             </div>
@@ -135,11 +135,7 @@ function navigateToPost(url: string) {
                 {{ post.description }}
               </p>
               <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; color: rgba(35, 47, 52, 0.5); font-size: 0.625rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em;">
-                <span style="display: flex; align-items: center; gap: 0.375rem;">
-                  <span class="material-symbols-outlined" style="font-size: 0.875rem; font-weight: 700;">schedule</span>
-                  {{ getReadingTime(post.description) }}
-                </span>
-                <span style="width: 0.25rem; height: 0.25rem; background-color: rgba(35, 47, 52, 0.2); border-radius: 9999px;"></span>
+
                 <span>{{ formatDate(post.date) }}</span>
               </div>
             </div>
@@ -148,20 +144,20 @@ function navigateToPost(url: string) {
       </div>
     </section>
 
-    <!-- Sessions Highlight Timeline -->
+    <!-- Events Highlight Timeline -->
     <section style="padding: 8rem 1.5rem; border-top: 1px solid rgba(35, 47, 52, 0.05);">
       <div class="container">
         <div style="display: grid; grid-template-columns: 1fr; gap: 5rem;">
           <!-- Left Column -->
           <div style="display: flex; flex-direction: column; gap: 2rem;">
             <p style="color: var(--accent-red); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; margin: 0;">Active Projects</p>
-            <h2 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em; line-height: 1.2; margin: 0;">Sessions Highlight</h2>
-            <p style="color: rgba(35, 47, 52, 0.7); font-size: 1.125rem; line-height: 1.75; font-weight: 500; margin: 0;">
-              Real-time tracking of creative sessions, from initial brainstorm to final implementation. Transparency in the making.
+            <h2 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em; line-height: 1.2; margin: 0;">Events Highlight</h2>
+            <p style="color: rgba(35, 47, 52, 0.7); font-size: 1.125rem; line-height: 1.6; max-width: 42rem; margin: 0;">
+              Real-time tracking of creative events, from initial brainstorm to final implementation. Transparency in the making.
             </p>
             <div style="padding-top: 1rem;">
               <a 
-                href="/sessions" 
+                href="/events" 
                 style="display: inline-flex; align-items: center; justify-content: center; border-radius: 0.75rem; height: 3.5rem; padding: 0 2rem; border: 2px solid var(--dark-navy); color: var(--dark-navy); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; transition: all 0.3s ease; text-decoration: none;"
                 @mouseenter="$event.target.style.backgroundColor = 'var(--dark-navy)'; $event.target.style.color = 'white'"
                 @mouseleave="$event.target.style.backgroundColor = 'transparent'; $event.target.style.color = 'var(--dark-navy)'"
@@ -174,10 +170,10 @@ function navigateToPost(url: string) {
           <!-- Right Column - Timeline -->
           <div style="display: flex; flex-direction: column; gap: 0; border-left: 2px solid rgba(35, 47, 52, 0.1); padding-left: 2.5rem; margin-left: 0.5rem;">
             <div 
-              v-for="(session, index) in latestSessions" 
-              :key="session.url"
+              v-for="(event, index) in latestEvents" 
+              :key="event.url"
               style="position: relative; padding-bottom: 3rem;"
-              :style="{ paddingBottom: index === latestSessions.length - 1 ? '0' : '3rem' }"
+              :style="{ paddingBottom: index === latestEvents.length - 1 ? '0' : '3rem' }"
             >
               <div 
                 style="position: absolute; left: -3.25rem; top: 0; width: 1.25rem; height: 1.25rem; border-radius: 9999px; border: 4px solid var(--cream); box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);"
@@ -185,11 +181,11 @@ function navigateToPost(url: string) {
               ></div>
               <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                 <span style="color: rgba(35, 47, 52, 0.4); font-size: 0.625rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em;">
-                  {{ formatSessionDate(session.date) }}
+                  {{ formatSessionDate(event.date) }}
                 </span>
-                <h4 style="font-size: 1.25rem; font-weight: 900; margin: 0;">{{ session.title }}</h4>
+                <h4 style="font-size: 1.25rem; font-weight: 900; margin: 0;">{{ event.title }}</h4>
                 <p style="color: rgba(35, 47, 52, 0.6); font-size: 0.875rem; line-height: 1.75; max-width: 32rem; margin: 0;">
-                  {{ session.description }}
+                  {{ event.description }}
                 </p>
               </div>
             </div>
