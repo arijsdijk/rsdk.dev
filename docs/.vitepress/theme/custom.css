@@ -92,6 +92,12 @@ body {
   color: var(--dark-navy);
 }
 
+.article-content a {
+  color: var(--accent-red);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
 .article-content blockquote {
   border-left: 12px solid var(--accent-red);
   padding-left: 2.5rem;

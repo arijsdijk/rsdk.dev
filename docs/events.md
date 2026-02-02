@@ -2,5 +2,5 @@
 layout: EventsPage
 sidebar: false
 title: Events
-description: Speaking engagements, workshops, and community events
+description: Conferences and meetups where I’ve shared my experiences and insights
 ---

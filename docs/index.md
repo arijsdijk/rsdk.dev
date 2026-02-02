@@ -2,6 +2,6 @@
 layout: HomePage
 sidebar: false
 title: Home
-description: Designing the future of digital experiences
+description: All Things Power Platform Blog
 ---
 

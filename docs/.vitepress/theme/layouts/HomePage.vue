@@ -131,7 +131,7 @@ function navigateToPost(url: string) {
               <h3 style="color: var(--dark-navy); font-size: 1.5rem; font-weight: 900; line-height: 1.2; margin: 0; transition: color 0.3s ease;">
                 {{ post.title }}
               </h3>
-              <p class="line-clamp-2" style="color: rgba(35, 47, 52, 0.7); font-size: 1rem; font-weight: 500; line-height: 1.6; margin: 0;">
+              <p class="line-clamp-3" style="color: rgba(35, 47, 52, 0.7); font-size: 1rem; font-weight: 500; line-height: 1.6; margin: 0;">
                 {{ post.description }}
               </p>
               <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; color: rgba(35, 47, 52, 0.5); font-size: 0.625rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em;">

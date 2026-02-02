@@ -15,7 +15,7 @@ const { frontmatter } = useData()
           <div style="position: absolute; inset: 0; border-radius: 9999px; border: 2px solid var(--dark-navy); transform: translate(0.5rem, 0.5rem); z-index: -1;"></div>
           <div style="width: 18rem; height: 18rem; border-radius: 9999px; overflow: hidden; border: 2px solid var(--dark-navy); background-color: white;">
             <img 
-              src="/assets/aboutme.jpg"
+              src="/assets/aboutme.png"
               alt="Arjan Rijsdijk" 
               style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: all 0.7s ease;"
               @mouseenter="$event.target.style.filter = 'grayscale(0%)'"

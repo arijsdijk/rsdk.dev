@@ -54,16 +54,6 @@ export default defineConfig({
       { text: 'About', link: '/about' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/arijsdijk' },
       { icon: 'linkedin', link: 'https://linkedin.com/in/arjanrijsdijk' },
