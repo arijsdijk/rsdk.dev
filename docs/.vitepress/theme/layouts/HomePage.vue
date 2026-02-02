@@ -64,7 +64,7 @@ function navigateToPost(url: string) {
         </h1>
         
         <p style="color: rgba(35, 47, 52, 0.7); font-size: 1.25rem; max-width: 42rem; line-height: 1.75; font-weight: 500; margin-bottom: 3rem;">
-          A deep dive into creative engineering, minimal aesthetics, and the logic behind modern interfaces.
+          Practical tips, demos, and hands-on experiences to help you get more out of the Power Platform
         </p>
         
         <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
@@ -93,7 +93,7 @@ function navigateToPost(url: string) {
       <div class="container">
         <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; gap: 1.5rem; margin-bottom: 4rem;">
           <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
-            <p style="color: var(--accent-red); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; margin: 0;">The Archive</p>
+            <p style="color: var(--accent-red); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; margin: 0;">My blogs</p>
             <h2 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em; margin: 0;">Latest from my blog</h2>
           </div>
           <a 
@@ -150,10 +150,10 @@ function navigateToPost(url: string) {
         <div style="display: grid; grid-template-columns: 1fr; gap: 5rem;">
           <!-- Left Column -->
           <div style="display: flex; flex-direction: column; gap: 2rem;">
-            <p style="color: var(--accent-red); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; margin: 0;">Active Projects</p>
-            <h2 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em; line-height: 1.2; margin: 0;">Events Highlight</h2>
+            <p style="color: var(--accent-red); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; margin: 0;">My Events</p>
+            <h2 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em; line-height: 1.2; margin: 0;">Events & Speaking</h2>
             <p style="color: rgba(35, 47, 52, 0.7); font-size: 1.125rem; line-height: 1.6; max-width: 42rem; margin: 0;">
-              Real-time tracking of creative events, from initial brainstorm to final implementation. Transparency in the making.
+              Conferences and meetups where I’ve shared my experiences and insights
             </p>
             <div style="padding-top: 1rem;">
               <a 
@@ -162,7 +162,7 @@ function navigateToPost(url: string) {
                 @mouseenter="$event.target.style.backgroundColor = 'var(--dark-navy)'; $event.target.style.color = 'white'"
                 @mouseleave="$event.target.style.backgroundColor = 'transparent'; $event.target.style.color = 'var(--dark-navy)'"
               >
-                Explore Timeline
+                Explore Events
               </a>
             </div>
           </div>
