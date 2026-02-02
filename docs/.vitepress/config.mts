@@ -1,4 +1,33 @@
 import { defineConfig } from 'vitepress'
+import { resolve } from 'path'
+import { copyFileSync, mkdirSync, existsSync, readdirSync } from 'fs'
+
+// Build hook to copy blog banner images to dist folder
+function copyBlogImages() {
+  const blogsDir = resolve(__dirname, '../blogs')
+  const distBlogsDir = resolve(__dirname, './dist/blogs')
+  
+  try {
+    const blogFolders = readdirSync(blogsDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => dirent.name)
+    
+    blogFolders.forEach(blogFolder => {
+      const sourceBanner = resolve(blogsDir, blogFolder, 'assets/banner.png')
+      if (existsSync(sourceBanner)) {
+        const destDir = resolve(distBlogsDir, blogFolder, 'assets')
+        if (!existsSync(destDir)) {
+          mkdirSync(destDir, { recursive: true })
+        }
+        const destBanner = resolve(destDir, 'banner.png')
+        copyFileSync(sourceBanner, destBanner)
+        console.log(`✓ Copied banner: ${blogFolder}`)
+      }
+    })
+  } catch (error) {
+    console.warn('⚠ Error copying blog images:', error)
+  }
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -8,8 +37,8 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: '/assets/logo.svg' }]
   ],
-  vite: {
-    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg']
+  buildEnd() {
+    copyBlogImages()
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
