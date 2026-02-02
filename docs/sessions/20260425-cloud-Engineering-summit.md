@@ -1,5 +1,5 @@
 ---
-title: Microsoft  2026 
+title: Microsoft Cloud Engineering Summit 2026 
 description: Microsoft Cloud Engineering Summit 2026 
 event: Microsoft Cloud Engineering Summit 2026 
 location: London, England

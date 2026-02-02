@@ -1,9 +1,9 @@
 ---
-title: European BizApps Summit
+title: European BizApps Summit 2026
 description: European BizApps Summit
 event: European BizApps Summit
 location: Cologne, Germany
-link: https://aisummit.nl
+link: https://bizappssummit.eu/
 date: 2026-05-05
 status: published
 ---

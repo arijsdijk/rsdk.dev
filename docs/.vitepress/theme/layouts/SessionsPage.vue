@@ -112,10 +112,6 @@ function navigateToSession(url: string) {
                       </div>
 
                       <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(35, 47, 52, 0.6);">
-                        <span class="material-symbols-outlined" style="font-size: 1.25rem;">event</span>
-                        <span>{{ session.event }}</span>
-                      </div>
-                      <div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(35, 47, 52, 0.6);">
                         <span class="material-symbols-outlined" style="font-size: 1.25rem;">location_on</span>
                         <span>{{ session.location }}</span>
                       </div>

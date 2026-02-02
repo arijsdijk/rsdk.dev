@@ -118,26 +118,31 @@ function navigateToPost(url: string) {
               style="width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.7s ease-out;"
               :style="{ backgroundImage: `url(${withBase(post.image)})` }"
             ></div>
-            <div style="position: absolute; top: 1.25rem; left: 1.25rem;">
+
+            <div style="position: absolute; top: 1rem; left: 1rem;">
               <span style="background-color: var(--accent-red); color: white; font-size: 0.625rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; padding: 0.375rem 1rem; border-radius: 9999px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);">
-                {{ getCategoryFromTags(post.tags) }}
+                <!-- {{ getCategoryFromTags(post.tags) }} -->
+                {{ post.subtitle }}
               </span>
             </div>
+
           </div>
           
           <div style="display: flex; flex-direction: column; gap: 1rem; padding: 0 0.5rem;">
             <h3 style="color: var(--dark-navy); font-size: 1.5rem; font-weight: 900; line-height: 1.2; margin: 0; transition: color 0.3s ease;">
               {{ post.title }}
             </h3>
-            <p class="line-clamp-2" style="color: rgba(35, 47, 52, 0.7); font-size: 1rem; font-weight: 500; line-height: 1.6; margin: 0;">
+            <p class="line-clamp-3" style="color: rgba(35, 47, 52, 0.7); font-size: 1rem; font-weight: 500; line-height: 1.6; margin: 0;">
               {{ post.description }}
             </p>
             <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; color: rgba(35, 47, 52, 0.5); font-size: 0.625rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em;">
+              
+              <!--
               <span style="display: flex; align-items: center; gap: 0.375rem;">
-                <span class="material-symbols-outlined" style="font-size: 0.875rem; font-weight: 700;">schedule</span>
-                {{ getReadingTime(post.description) }}
+                {{ post.author }}
               </span>
-              <span style="width: 0.25rem; height: 0.25rem; background-color: rgba(35, 47, 52, 0.2); border-radius: 9999px;"></span>
+              -->
+
               <span>{{ formatDate(post.date) }}</span>
             </div>
           </div>

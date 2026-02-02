@@ -2,6 +2,7 @@
 layout: BlogDetail
 sidebar: false
 title: Create a custom loading component
+subtitle: canvas loading component
 description: Custom Loading Component
 image: /images/blog/power-automate-flows.jpg
 status: published
