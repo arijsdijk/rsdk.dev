@@ -3,11 +3,11 @@ layout: BlogDetail
 sidebar: false
 title: Create a custom loading component
 subtitle: canvas loading component
-description: Custom Loading Component
+description: In this post, I will show you how to easily create a custom loading gif using Figma and how to use this image to create a loader component in Power Apps. All you need is an image of about 32 by 32 pixels.
 image: /images/blog/power-automate-flows.jpg
 status: published
 date: 2025-06-01
-tags: Power Automate, Power Apps, Dataverse
+tags: Power Apps
 author: ARJAN RIJSDIJK
 ---
 

@@ -3,7 +3,7 @@ layout: BlogDetail
 sidebar: false
 title: Build Custom Toast Notifications
 subtitle: Toast Notifications
-description: Toast notifications
+description: In this article, I will show you how to build toast notifications for Canvas apps. In this example, I use a component so that the functionalities are reusable on different screens within your app.
 image: /images/blog/power-automate-flows.jpg
 status: published
 date: 2025-07-07

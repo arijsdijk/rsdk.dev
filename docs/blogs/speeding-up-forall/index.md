@@ -1,9 +1,9 @@
 ---
 layout: BlogDetail
 sidebar: false
-title: Speeding Up ForAll
+title: Speeding Up You ForAll's
 subtitle: speed up forall
-description: Speeding Up ForAll
+description: The idea is to use a ForAll function to add 30 records to a Dataverse table in a single operation. I want to measure the performance of this action and determine how many milliseconds
 image: /images/blog/power-automate-flows.jpg
 status: published
 date: 2025-07-17
