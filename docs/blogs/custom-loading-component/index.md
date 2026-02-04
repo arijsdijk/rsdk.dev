@@ -7,7 +7,7 @@ description: In this post, I will show you how to easily create a custom loading
 image: /images/blog/power-automate-flows.jpg
 status: published
 date: 2025-06-01
-tags: Power Apps
+tags: Power Apps, Figma
 author: ARJAN RIJSDIJK
 ---
 
