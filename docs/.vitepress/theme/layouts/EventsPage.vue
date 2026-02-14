@@ -133,6 +133,7 @@ function loadMore() {
                   </p>
 
                   <a 
+                    v-if="event.link"
                     :href="event.link"
                     target="_blank"
                     style="display: inline-flex; align-items: center; color: var(--accent-red); font-weight: 900; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.15em; transition: gap 0.3s ease; gap: 0.25rem;"
