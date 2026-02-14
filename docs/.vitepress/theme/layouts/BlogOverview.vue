@@ -89,8 +89,7 @@ function navigateToPost(url: string) {
           Blog Archive
         </h1>
         <p style="color: rgba(35, 47, 52, 0.8); font-size: 1.5rem; max-width: 48rem; line-height: 1.6; font-weight: 500;">
-          A curated collection of thoughts on Power Platform, development tools, and modern business solutions.
-        </p>
+          Practical tips, demos, and hands-on experiences to help you get more out of the Power Platform</p>
       </div>
 
       <!-- Tag Filter -->
