@@ -121,6 +121,16 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.article-content p code {
+  background-color: var(--primary);
+  font-size: 1rem; /* 20px */
+  color: var(--cream);
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+
+
 /* ===== Code Block Copy Button ===== */
 .article-content div[class*='language-'] {
   position: relative;
@@ -190,7 +200,8 @@ body {
 
 .article-content ol {
   list-style-type: decimal;
-  font-size: 1rem;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.8;
 }
 
 
