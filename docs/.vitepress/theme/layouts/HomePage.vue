@@ -51,7 +51,7 @@ function navigateToPost(url: string) {
 <template>
   <div class="custom-layout">
     <!-- Hero Section -->
-    <section :style="{ position: 'relative', padding: '6rem 1.5rem 10rem', backgroundImage: `url(${withBase('/assets/aboutme-3.jpg')})`, backgroundSize: '110%', backgroundPosition: 'right center', backgroundRepeat: 'no-repeat' }">
+    <section class="hero-section" :style="{ backgroundImage: `url(${withBase('/assets/aboutme-3.jpg')})` }">
       <div style="position: absolute; inset: 0; background: rgba(232, 233, 224, 0.75);"></div>
       <div style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
 
@@ -199,6 +199,14 @@ function navigateToPost(url: string) {
 </template>
 
 <style scoped>
+.hero-section {
+  position: relative;
+  padding: 6rem 1.5rem 10rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .blog-card:hover h3 {
   color: var(--accent-red);
 }
@@ -208,6 +216,11 @@ function navigateToPost(url: string) {
 }
 
 @media (min-width: 768px) {
+  .hero-section {
+    background-size: 110%;
+    background-position: right center;
+  }
+  
   h1 {
     font-size: 7rem !important;
   }
