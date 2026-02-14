@@ -5,7 +5,7 @@ title: Create your first code app in Power Apps
 subtitle: Create Code Apps
 description: Create your first code app in Power Apps
 image: /assets/banner.png
-status: published
+status: concept
 date: 2026-02-06
 tags: Power Apps, Visual Studio Code
 author: ARJAN RIJSDIJK

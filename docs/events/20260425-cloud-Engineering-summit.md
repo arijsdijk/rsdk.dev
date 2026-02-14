@@ -3,7 +3,7 @@ title: Microsoft Cloud Engineering Summit 2026
 description: Microsoft Cloud Engineering Summit 2026 
 event: Microsoft Cloud Engineering Summit 2026 
 location: London, England
-link: https://m365bootcamp.com
+link: https://www.powercommunity.com/
 date: 2026-04-25
 status: published
 ---
