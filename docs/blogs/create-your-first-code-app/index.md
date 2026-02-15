@@ -3,10 +3,10 @@ layout: BlogDetail
 sidebar: false
 title: Create your first code app in Power Apps
 subtitle: Create Code Apps
-description: Create your first code app in Power Apps
+description: After a period in preview, Microsoft recently announced that Power Apps Code apps are now generally available.
 image: /assets/banner.png
 status: published
-date: 2026-02-06
+date: 2026-02-15
 tags: Power Apps
 author: ARJAN RIJSDIJK
 ---
