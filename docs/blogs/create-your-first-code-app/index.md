@@ -5,9 +5,9 @@ title: Create your first code app in Power Apps
 subtitle: Create Code Apps
 description: Create your first code app in Power Apps
 image: /assets/banner.png
-status: concept
+status: published
 date: 2026-02-06
-tags: Power Apps, Visual Studio Code
+tags: Power Apps
 author: ARJAN RIJSDIJK
 ---
 
@@ -62,7 +62,7 @@ Use the following steps to enable Power Apps Code apps in the Power Platform Adm
 
 Before we can start building a Power Apps Code app, we need a development tool or editor. 
 
-During my first experiences building Power Apps Code apps, I used several IDEs (Integrated Development Environments), such as Visual Studio Code, Cursor, and Antigravity. At the end of this article, I’ll reflect on my experiences with these tools. For now, this article focuses on using Visual Studio Code.
+During my first experiences building Power Apps Code apps, I used several IDEs (Integrated Development Environments), such as Visual Studio Code, Cursor, and Antigravity. I’ll reflect on my experiences with these tools in a later post. For now, this article focuses on using Visual Studio Code.
 
 Visual Studio Code (VS Code) is a lightweight and fast code editor from Microsoft. The huge ecosystem of extensions (such as Power Platform, Dataverse, and GitHub), combined with the integration of GitHub Copilot, makes it an indispensable tool for me.
 
@@ -300,25 +300,36 @@ It can be very useful to view the result of your Code app directly within your V
 ![Use the Visual Studio Code Simple Browser](./assets/18-simple-browser.gif)
 
 
-
-
+Important! The Simple Browser only works properly with the localhost link, not with the apps.powerapps.com link. This is due to the authentication requirements we discussed earlier when working with connectors.
 
 
 
 ### What do we get
 
-Basic structure
+We’ve now completed all the development steps and were able to view the first result in the browser. Next, let’s take a look at what has been created behind the scenes.
 
-copilot-instructions.md 
+Based on the previous actions, a project folder has been created that contains everything needed for your app. The ```/src``` folder inside the ```ExampleApp``` project (folder) contains all the required files for your app. As you continue developing, you’ll see pages, components, CSS files, and more being updated or added here.
+
+I won’t go too deep into this right now—that’s something for a future article. But here’s a tip: take a good look at the contents of the /src folder, try to spot the relationships, and see if you can figure out how everything works. It’ll definitely help you in the next steps
 
 
 
+### Instructions
 
+Make sure to check the ```.github``` folder as well. It contains the ```copilot-instructions.md``` file, which defines a set of CLI instructions used by your coding agent (GitHub Copilot in this case). You can customize this file by adding instructions that match the needs and requirements of your app.
+
+![Copilot Instructions](./assets/18-copilot-instructions.png)
 
 
 ## Build & deploy
 
+You’ve now built your first Code App and tested it on a development server. We can now publish it to Power Apps.
+
 ### Build
+
+First, we need to build the app. You can see this as creating a 'package' that Power Apps can receive and process.
+
+To do this, run the following command in your terminal:
 
 ```
 npm run build
@@ -326,17 +337,21 @@ npm run build
 
 ### Push the app
 
+Once the build command has been executed, the package can be pushed to Power Apps.
+
+To do this, run the following command in your terminal:
+
 ```
 npm code push
 ```
 
+Don’t worry! This process may take a little while—just wait until you see the message ‘App has successfully been pushed!’ appear in your terminal.
+
+
 ### Solution
 
-hadmatig aan een solution toevoegen
+Once your Code App has been successfully pushed to Power Apps, it will, by default, be available in your **Default Solution**.
 
+![Default Solution](./assets/19-codeapp-solution.png)
 
-
-
-
-## Diferent IDE's
-
+Just like any other Power App, you can also add a Code App to other solutions.
