@@ -58,7 +58,7 @@ function loadMore() {
           Events
         </h1>
         <p style="color: rgba(35, 47, 52, 0.7); font-size: 1.25rem; max-width: 42rem; line-height: 1.75;">
-          My collection of conferences and meetups where I’ve shared (or going to share) my experiences and insights
+          My collection of conferences and meetups where I’ve shared (or will share) my experiences and insights
         </p>
       </div>
 

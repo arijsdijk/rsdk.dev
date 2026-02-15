@@ -36,7 +36,7 @@ function copyBlogImages() {
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "arjanrijsdijk.com",
-  description: "My Power Platform Blog",
+  description: "All Things Power Platform Blog",
   appearance: false,
   head: [
     ['link', { rel: 'icon', href: '/assets/logo.svg' }],

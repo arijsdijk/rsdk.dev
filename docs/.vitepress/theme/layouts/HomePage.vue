@@ -64,7 +64,7 @@ function navigateToPost(url: string) {
         </h1>
         
         <p style="color: rgba(35, 47, 52, 0.7); font-size: 1.25rem; max-width: 42rem; line-height: 1.75; font-weight: 500; margin-bottom: 3rem;">
-          Practical tips, demos, and hands-on experiences to help you get more out of the Power Platform
+          My practical tips, demos, ideas, and thoughts about to the Power Platform
         </p>
         
         <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
@@ -153,7 +153,7 @@ function navigateToPost(url: string) {
             <p style="color: var(--accent-red); font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; margin: 0;">My Events</p>
             <h2 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.05em; line-height: 1.2; margin: 0;">Events & Speaking</h2>
             <p style="color: rgba(35, 47, 52, 0.7); font-size: 1.125rem; line-height: 1.6; max-width: 42rem; margin: 0;">
-              Conferences and meetups where I’ve shared my experiences and insights
+              My collection of conferences and meetups where I’ve shared (or will share) my experiences and insights
             </p>
             <div style="padding-top: 1rem;">
               <a 
