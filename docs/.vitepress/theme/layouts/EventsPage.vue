@@ -3,15 +3,40 @@ import { computed, ref } from 'vue'
 import { data as events } from '../events.data'
 import Footer from '../components/Footer.vue'
 
+// Track selected filter (Upcoming or Past)
+const selectedFilter = ref('Upcoming')
+
 // Track how many events to display
 const displayCount = ref(5)
 
-// Sort all events by date (newest first)
+// Helper function to check if event is upcoming
+function isUpcoming(dateString: string) {
+  const eventDate = new Date(dateString)
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  return eventDate >= today
+}
+
+// Filter and sort events based on selected filter
 const sortedEvents = computed(() => {
-  return [...events].sort((a, b) => {
+  const filtered = events.filter(event => {
+    if (selectedFilter.value === 'Upcoming') {
+      return isUpcoming(event.date)
+    } else {
+      return !isUpcoming(event.date)
+    }
+  })
+
+  // Sort upcoming events: soonest first (ascending)
+  // Sort past events: most recent first (descending)
+  return filtered.sort((a, b) => {
     const dateA = new Date(a.date)
     const dateB = new Date(b.date)
-    return dateB.getTime() - dateA.getTime()
+    if (selectedFilter.value === 'Upcoming') {
+      return dateA.getTime() - dateB.getTime() // Ascending
+    } else {
+      return dateB.getTime() - dateA.getTime() // Descending
+    }
   })
 })
 
@@ -25,6 +50,12 @@ const hasMore = computed(() => {
   return displayCount.value < sortedEvents.value.length
 })
 
+// Switch filter and reset display count
+function selectFilter(filter: string) {
+  selectedFilter.value = filter
+  displayCount.value = 5
+}
+
 function formatDate(dateString: string) {
   const date = new Date(dateString)
   return date.toLocaleDateString('en-US', { 
@@ -35,13 +66,6 @@ function formatDate(dateString: string) {
 
 function navigateToEvent(url: string) {
   window.open(url, '_blank')
-}
-
-function isUpcoming(dateString: string) {
-  const eventDate = new Date(dateString)
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-  return eventDate >= today
 }
 
 function loadMore() {
@@ -61,7 +85,21 @@ function loadMore() {
           My collection of conferences and meetups where I’ve shared (or will share) my experiences and insights
         </p>
       </div>
-
+      <!-- Filter Buttons -->
+      <div style="display: flex; gap: 1rem; margin-bottom: 4rem; flex-wrap: wrap; justify-content: center; max-width: 1280px; margin-left: auto; margin-right: auto; padding: 0 1.5rem;">
+        <div
+          :class="['tag-pill', selectedFilter === 'Upcoming' ? 'active' : 'inactive']"
+          @click="selectFilter('Upcoming')"
+        >
+          <p style="margin: 0;">Upcoming</p>
+        </div>
+        <div
+          :class="['tag-pill', selectedFilter === 'Past' ? 'active' : 'inactive']"
+          @click="selectFilter('Past')"
+        >
+          <p style="margin: 0;">Past</p>
+        </div>
+      </div>
       <!-- Timeline -->
       <div style="position: relative; max-width: 1280px; margin-left: auto; margin-right: auto; padding: 0 1.5rem;">
         <!-- Vertical Line -->

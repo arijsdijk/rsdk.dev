@@ -18,9 +18,8 @@ I also love sharing my passion as a speaker. At events and meetups, I talk about
 
 ## Contact
 
-If you have any questions, feel free to reach out and send me an email [arjan.rijsdijk@outlook.com](mailto:arjan.rijsdijk@outlook.com)
-
+If you have any questions, feel free to reach out and send me a message on [LinkedIn](https://www.linkedin.com/in/arjanrijsdijk/)
 
 You can also find or follow me on the following channels:
 
-[LinkedIn](https://www.linkedin.com/in/arjanrijsdijk/) [GitHub](https://github.com/arijsdijk) [X.com](https://x.com/arjanrijsdijk) [Bluesky](https://bsky.app/profile/arjanrijsdijk.com) [Sessionize](https://sessionize.com/arjanrijsdijk/) [Run.events](https://speakers.run.events/arjanrijsdijk)
+ [GitHub](https://github.com/arijsdijk) [X.com](https://x.com/arjanrijsdijk) [Bluesky](https://bsky.app/profile/arjanrijsdijk.com) [Sessionize](https://sessionize.com/arjanrijsdijk/) [Run.events](https://speakers.run.events/arjanrijsdijk)

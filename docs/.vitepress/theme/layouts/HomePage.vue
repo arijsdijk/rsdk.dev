@@ -10,9 +10,24 @@ const latestPosts = computed(() => {
   return blogPosts.slice(0, 3)
 })
 
-// Get latest 3 events for timeline
+// Helper function to check if event is upcoming
+function isUpcoming(dateString: string) {
+  const eventDate = new Date(dateString)
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  return eventDate >= today
+}
+
+// Get next 3 upcoming events, sorted soonest first
 const latestEvents = computed(() => {
-  return events.slice(0, 3)
+  return events
+    .filter(event => isUpcoming(event.date))
+    .sort((a, b) => {
+      const dateA = new Date(a.date)
+      const dateB = new Date(b.date)
+      return dateA.getTime() - dateB.getTime() // Ascending order
+    })
+    .slice(0, 3)
 })
 
 function formatDate(dateString: string) {

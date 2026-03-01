@@ -1,6 +1,6 @@
 ---
 title: ColorCloud 2026
-description: ColorCloud 2026
+description: Play it (w)right - automate your end-to-end tests in the Power Platform
 event: ColorCloud 2026
 location: Hamburg, Germany
 link: https://color.cloud/

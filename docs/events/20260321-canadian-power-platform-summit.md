@@ -1,6 +1,6 @@
 ---
 title: Canadian Power Platform Summit 2026
-description: Canadian Power Platform Summit 2026
+description: Play it (w)right - automate your end-to-end tests in the Power Platform
 event: Canadian Power Platform Summit 2026
 location: Vancouver, Canada
 link: https://canadianpowerplatformsummit.com/
