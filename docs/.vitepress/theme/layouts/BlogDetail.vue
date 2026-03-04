@@ -20,6 +20,27 @@ const tocHeaders = computed(() => {
 // Parse headings from DOM after content is rendered
 const domHeaders = ref<Array<{title: string, link: string, level: number}>>([])
 
+// Lightbox
+const lightboxOpen = ref(false)
+const lightboxSrc = ref('')
+const lightboxAlt = ref('')
+
+function openLightbox(src: string, alt: string) {
+  lightboxSrc.value = src
+  lightboxAlt.value = alt
+  lightboxOpen.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+function closeLightbox() {
+  lightboxOpen.value = false
+  document.body.style.overflow = ''
+}
+
+function onLightboxKeydown(e: KeyboardEvent) {
+  if (e.key === 'Escape') closeLightbox()
+}
+
 // Scroll to top functionality
 const showScrollTop = ref(false)
 
@@ -35,7 +56,7 @@ const scrollToTop = () => {
 }
 
 onMounted(() => {
-  // Wait for content to render, then extract headings
+  // Wait for content to render, then extract headings and wire up lightbox
   setTimeout(() => {
     const contentEl = document.querySelector('.article-content')
     if (contentEl) {
@@ -45,8 +66,18 @@ onMounted(() => {
         link: '#' + h.id,
         level: parseInt(h.tagName.substring(1))
       }))
+
+      // Wire up lightbox for images
+      const images = contentEl.querySelectorAll('img')
+      images.forEach((img: HTMLImageElement) => {
+        img.style.cursor = 'zoom-in'
+        img.addEventListener('click', () => openLightbox(img.src, img.alt))
+      })
     }
   }, 100)
+
+  // Keyboard listener for lightbox
+  window.addEventListener('keydown', onLightboxKeydown)
   
   // Add scroll listener
   window.addEventListener('scroll', handleScroll)
@@ -55,6 +86,8 @@ onMounted(() => {
 // Cleanup on unmount
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('keydown', onLightboxKeydown)
+  document.body.style.overflow = ''
 })
 
 const displayHeaders = computed(() => {
@@ -166,7 +199,30 @@ function navigateToTagFilter(tag: string) {
     </main>
 
     <Footer />
-    
+
+    <!-- Lightbox -->
+    <Transition name="lightbox">
+      <div
+        v-if="lightboxOpen"
+        class="lightbox-overlay"
+        @click.self="closeLightbox"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="lightboxAlt || 'Image preview'"
+      >
+        <button class="lightbox-close" @click="closeLightbox" aria-label="Close image preview">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <div class="lightbox-content">
+          <img :src="lightboxSrc" :alt="lightboxAlt" class="lightbox-image" />
+          <p v-if="lightboxAlt" class="lightbox-caption">{{ lightboxAlt }}</p>
+        </div>
+      </div>
+    </Transition>
+
     <!-- Scroll to Top Button -->
     <Transition name="scroll-top">
       <button 
@@ -223,6 +279,91 @@ function navigateToTagFilter(tag: string) {
 .scroll-to-top svg {
   width: 24px;
   height: 24px;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--accent-red);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2001;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background-color: var(--dark-navy);
+  transform: scale(1.1);
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: default !important;
+}
+
+.lightbox-caption {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0;
+}
+
+/* Lightbox transition */
+.lightbox-enter-active,
+.lightbox-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-enter-from,
+.lightbox-leave-to {
+  opacity: 0;
+}
+
+.lightbox-enter-active .lightbox-content,
+.lightbox-leave-active .lightbox-content {
+  transition: transform 0.25s ease;
+}
+
+.lightbox-enter-from .lightbox-content,
+.lightbox-leave-to .lightbox-content {
+  transform: scale(0.92);
 }
 
 /* Transition for scroll to top button */
