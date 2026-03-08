@@ -16,13 +16,15 @@ author: ARJAN RIJSDIJK
 
 There was already an option to create generative pages directly within model-driven apps. I previously wrote an article about that: [My first look at generative pages](http://arjanrijsdijk.com/blogs/first-look-generative-pages/). Now we have the option to use AI coding tools to create these pages.
 
-In this article, I’ll show you how to use GitHub Copilot CLI to develop a generative page (or genux page, as Microsoft often calls it) for model-driven apps.
+In this article, I’ll show you how to use GitHub Copilot CLI to create a generative page (or genux page, as Microsoft often calls it so now and then) for model-driven apps.
 
-#### The goal
+You can find the official Microsoft documentation here: [Create and edit generative pages with AI code generation tools](https://learn.microsoft.com/en-sg/power-apps/maker/model-driven-apps/generative-page-external-tools)
 
-The goal is to use a table of LEGO sets (pretty much every LEGO set ever made :-)), I want to generate a page with cards (name, image and year). Given the number of records, I also want to include navigation (pagination), and it should be possible to search by keyword and/or year (release year).
+#### My goal
 
-Below you’ll find the table and app I use in this article.
+My goal is to use a table of LEGO sets (pretty much every LEGO set ever made :-)), I want to generate a page with cards (name, image and year). Given the number of records, I also want to include navigation (pagination), and it should be possible to search by keyword and/or year (release year).
+
+Below you’ll find the table and app I've used to get started.
 
 ![Lego Sets table](./assets/0-solution-table.png)
 
