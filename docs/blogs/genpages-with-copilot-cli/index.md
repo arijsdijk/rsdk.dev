@@ -3,10 +3,10 @@ layout: BlogDetail
 sidebar: false
 title: Generative Pages with GitHub Copilot CLI
 subtitle: Genpages with Copilot CLI
-description: In this article, I’ll show you how to create breadcrumbs using out-of-the-box Power Apps features to help your users navigate through the app.
+description: In this article, I’ll show you how to use GitHub Copilot CLI to create a generative page (or genux page, as Microsoft often calls it so now and then) for model-driven apps.
 image: /images/blog/power-automate-flows.jpg
 status: published
-date: 2026-03-01
+date: 2026-03-08
 tags: Power Apps, GitHub Copilot
 author: ARJAN RIJSDIJK
 ---
