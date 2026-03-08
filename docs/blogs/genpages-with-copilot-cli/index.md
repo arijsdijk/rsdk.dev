@@ -47,7 +47,7 @@ npm install -g @github/copilot
 
 ### Power Platform skills
 
-Microsoft has made a number of official agent skills/plugins available for the Power Platform. In this example, we’ll use the model-apps plugin.
+Microsoft has made a number of awesome agent skills/plugins available for the Power Platform. In this example, we’ll use the model-apps plugin.
 
 To install the Power Platform plugins (inclusing the model-apps variant), run the following command:
 
@@ -55,7 +55,7 @@ To install the Power Platform plugins (inclusing the model-apps variant), run th
 curl -fsSL https://raw.githubusercontent.com/microsoft/power-platform-skills/main/scripts/install.js | node
 ```
 
-More information and available options for these plugins can be found here: [Power Platform Skills](https://github.com/microsoft/power-platform-skills/tree/main)
+More information and available options for these plugins can be found here: [Power Platform Skills](https://github.com/microsoft/power-platform-skills/tree/main). 
 
 
 
