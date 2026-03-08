@@ -12,67 +12,13 @@ author: ARJAN RIJSDIJK
 ---
 
 
-<!-- 
-
-
-# Notes
-
-# Subjects
-
-* Github Copilot CLI
-* PAC CLI (preview model commands)
-* Created tests
-* .copilot / plugins (write about the instructions, the best practice)
-
-
-# Demo structure
-
-1. Install Github Copilot
-2. Create a genpage, based on Accounts table
-3. Publish a Gen page
-4. Create gen page from naturual language in MDA
-5. Edit using Copilot CLI
-6. See result
-
-7. PAC CLI preview (neccesary stuf), but also in preview)
-8. plugins (write about the instructions, the best practice)
-9. Good to know:
-    * Gemaakte genpages niet terug te vinden in solution
-    * Je aangemaakt genpage is dus nog geen page (zoals we dat gewend zijn vanuit custom pages)
-    * Er zijn solution afhankelijkheden, denk aan de eerste keer exporteren. Afhankelijkheden inzichtelijk maken
-
-
-# Trefwoorden voor post/blog
-
-> Eindelijk kent copilot nu het platform 
-> Preview 
-> Only US English
-
-
-# Message
-
-
-
-
-
-LET OP! Dit betreft preview functionaliteit!!!!!!
-
-
-In dit blog leg ik uit hoe je met gebruik Copilot CLI een generative page kunt maken of wijzigen en deze kiunt uploaden (of downloaden) naar je IDE. In dit voorbeeld maak ik gebruik van Visual Studio Code als IDE. Uiteraard kun je je eigen IDE kiezen. De documentatie van Microsoft beperkt zich op dit moment tot Visual Studio Code en Claude Code. 
-
-https://learn.microsoft.com/en-sg/power-apps/maker/model-driven-apps/generative-page-external-tools
-
--->
-
-
-
 ## Before we start
-
-In this article, I’ll show you how to use GitHub Copilot CLI to develop a generative page (or genux page, as Microsoft often calls it) for model-driven apps.
 
 There was already an option to create generative pages directly within model-driven apps. I previously wrote an article about that: [My first look at generative pages](http://arjanrijsdijk.com/blogs/first-look-generative-pages/). Now we have the option to use AI coding tools to create these pages.
 
-### The goal
+In this article, I’ll show you how to use GitHub Copilot CLI to develop a generative page (or genux page, as Microsoft often calls it) for model-driven apps.
+
+#### The goal
 
 The goal is to use a table of LEGO sets (pretty much every LEGO set ever made :-)), I want to generate a page with cards (name, image and year). Given the number of records, I also want to include navigation (pagination), and it should be possible to search by keyword and/or year (release year).
 
