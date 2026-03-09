@@ -64,7 +64,12 @@ export default defineConfig({
       }
       if (pageData.frontmatter.image) {
         const image = pageData.frontmatter.image as string
-        const absImage = image.startsWith('http') ? image : `https://arjanrijsdijk.com${image}`
+        // /assets/... paths are relative to the blog folder, not the site root
+        const absImage = image.startsWith('http')
+          ? image
+          : image.startsWith('/assets/')
+            ? `https://arjanrijsdijk.com/blogs/${folder}${image}`
+            : `https://arjanrijsdijk.com${image}`
         head.push(['meta', { property: 'og:image', content: absImage }])
       }
       head.push(['meta', { property: 'og:url', content: `https://arjanrijsdijk.com${ogUrl}` }])

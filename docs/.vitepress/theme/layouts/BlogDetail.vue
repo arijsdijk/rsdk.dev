@@ -70,9 +70,15 @@ onMounted(() => {
   const origin = window.location.origin
   const folder = page.value.relativePath.split('/').slice(-2, -1)[0] ?? ''
   const image = frontmatter.value.image ?? ''
+  // /assets/... paths are relative to the blog folder, not the site root
+  const resolvedImage = image.startsWith('http')
+    ? image
+    : image.startsWith('/assets/')
+      ? `${origin}/blogs/${folder}${image}`
+      : `${origin}${image}`
   setMetaTag('og:title', frontmatter.value.title ?? '')
   setMetaTag('og:description', frontmatter.value.description ?? '')
-  setMetaTag('og:image', image.startsWith('http') ? image : `${origin}${image}`)
+  setMetaTag('og:image', resolvedImage)
   setMetaTag('og:url', `${origin}/blogs/${folder}`)
   setMetaTag('og:type', 'article')
 
