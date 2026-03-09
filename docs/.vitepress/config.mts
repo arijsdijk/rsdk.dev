@@ -1,12 +1,12 @@
 import { defineConfig, type HeadConfig } from 'vitepress'
 import { fileURLToPath } from 'url'
 import { resolve, dirname } from 'path'
-import { copyFileSync, mkdirSync, existsSync, readdirSync } from 'fs'
+import { copyFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'fs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-// Build hook to copy blog banner images to dist folder
+// Build hook to copy blog asset images to dist folder
 function copyBlogImages() {
   const blogsDir = resolve(__dirname, '../blogs')
   const distBlogsDir = resolve(__dirname, './dist/blogs')
@@ -17,16 +17,25 @@ function copyBlogImages() {
       .map((dirent: any) => dirent.name)
     
     blogFolders.forEach((blogFolder: string) => {
-      const sourceBanner = resolve(blogsDir, blogFolder, 'assets/banner.png')
-      if (existsSync(sourceBanner)) {
-        const destDir = resolve(distBlogsDir, blogFolder, 'assets')
-        if (!existsSync(destDir)) {
-          mkdirSync(destDir, { recursive: true })
-        }
-        const destBanner = resolve(destDir, 'banner.png')
-        copyFileSync(sourceBanner, destBanner)
-        console.log(`✓ Copied banner: ${blogFolder}`)
+      const sourceAssetsDir = resolve(blogsDir, blogFolder, 'assets')
+      if (!existsSync(sourceAssetsDir)) return
+
+      const files = readdirSync(sourceAssetsDir).filter((f: string) => {
+        const stat = statSync(resolve(sourceAssetsDir, f))
+        return stat.isFile()
+      })
+
+      if (files.length === 0) return
+
+      const destDir = resolve(distBlogsDir, blogFolder, 'assets')
+      if (!existsSync(destDir)) {
+        mkdirSync(destDir, { recursive: true })
       }
+
+      files.forEach((file: string) => {
+        copyFileSync(resolve(sourceAssetsDir, file), resolve(destDir, file))
+        console.log(`✓ Copied asset: ${blogFolder}/assets/${file}`)
+      })
     })
   } catch (error) {
     console.warn('⚠ Error copying blog images:', error)
