@@ -6,6 +6,16 @@ import Footer from '../components/Footer.vue'
 
 const { frontmatter, page } = useData()
 
+function setMetaTag(property: string, content: string) {
+  let el = document.querySelector(`meta[property="${property}"]`)
+  if (!el) {
+    el = document.createElement('meta')
+    el.setAttribute('property', property)
+    document.head.appendChild(el)
+  }
+  el.setAttribute('content', content)
+}
+
 // Extract headings from the current page
 const tocHeaders = computed(() => {
   // Try to get headers from page metadata
@@ -56,6 +66,14 @@ const scrollToTop = () => {
 }
 
 onMounted(() => {
+  // Set Open Graph meta tags
+  const folder = page.value.relativePath.split('/').slice(-2, -1)[0] ?? ''
+  setMetaTag('og:title', frontmatter.value.title ?? '')
+  setMetaTag('og:description', frontmatter.value.description ?? '')
+  setMetaTag('og:image', frontmatter.value.image ?? '')
+  setMetaTag('og:url', `/blogs/${folder}`)
+  setMetaTag('og:type', 'article')
+
   // Wait for content to render, then extract headings and wire up lightbox
   setTimeout(() => {
     const contentEl = document.querySelector('.article-content')

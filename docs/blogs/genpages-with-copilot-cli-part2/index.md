@@ -4,7 +4,7 @@ sidebar: false
 title: Generative Pages with AI code tools - Part 2
 subtitle: Breadcrumbs in Canvas apps
 description: In this article, I’ll show you how to create breadcrumbs using out-of-the-box Power Apps features to help your users navigate through the app.
-image: /images/blog/power-automate-flows.jpg
+image: /assets/banner.png
 status: concept
 date: 2026-03-01
 tags: Power Apps, Copilot

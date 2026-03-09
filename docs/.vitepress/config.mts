@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, type HeadConfig } from 'vitepress'
 import { fileURLToPath } from 'url'
 import { resolve, dirname } from 'path'
 import { copyFileSync, mkdirSync, existsSync, readdirSync } from 'fs'
@@ -47,6 +47,30 @@ export default defineConfig({
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "vb9xtou69c");`]
   ],
+  transformHead({ pageData }) {
+    const head: HeadConfig[] = []
+
+    if (pageData.frontmatter.layout === 'BlogDetail') {
+      // Derive /blogs/{folder} from the relative path (e.g. blogs/my-post/index.md)
+      const parts = pageData.relativePath.split('/')
+      const folder = parts.length >= 2 ? parts[parts.length - 2] : ''
+      const ogUrl = `/blogs/${folder}`
+
+      if (pageData.frontmatter.title) {
+        head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title }])
+      }
+      if (pageData.frontmatter.description) {
+        head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }])
+      }
+      if (pageData.frontmatter.image) {
+        head.push(['meta', { property: 'og:image', content: pageData.frontmatter.image }])
+      }
+      head.push(['meta', { property: 'og:url', content: ogUrl }])
+      head.push(['meta', { property: 'og:type', content: 'article' }])
+    }
+
+    return head
+  },
   buildEnd() {
     copyBlogImages()
   },
