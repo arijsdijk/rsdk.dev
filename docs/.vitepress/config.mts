@@ -63,9 +63,11 @@ export default defineConfig({
         head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }])
       }
       if (pageData.frontmatter.image) {
-        head.push(['meta', { property: 'og:image', content: pageData.frontmatter.image }])
+        const image = pageData.frontmatter.image as string
+        const absImage = image.startsWith('http') ? image : `https://arjanrijsdijk.com${image}`
+        head.push(['meta', { property: 'og:image', content: absImage }])
       }
-      head.push(['meta', { property: 'og:url', content: ogUrl }])
+      head.push(['meta', { property: 'og:url', content: `https://arjanrijsdijk.com${ogUrl}` }])
       head.push(['meta', { property: 'og:type', content: 'article' }])
     }
 

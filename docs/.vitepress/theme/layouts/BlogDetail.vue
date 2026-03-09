@@ -66,12 +66,14 @@ const scrollToTop = () => {
 }
 
 onMounted(() => {
-  // Set Open Graph meta tags
+  // Set Open Graph meta tags — social crawlers require absolute URLs
+  const origin = window.location.origin
   const folder = page.value.relativePath.split('/').slice(-2, -1)[0] ?? ''
+  const image = frontmatter.value.image ?? ''
   setMetaTag('og:title', frontmatter.value.title ?? '')
   setMetaTag('og:description', frontmatter.value.description ?? '')
-  setMetaTag('og:image', frontmatter.value.image ?? '')
-  setMetaTag('og:url', `/blogs/${folder}`)
+  setMetaTag('og:image', image.startsWith('http') ? image : `${origin}${image}`)
+  setMetaTag('og:url', `${origin}/blogs/${folder}`)
   setMetaTag('og:type', 'article')
 
   // Wait for content to render, then extract headings and wire up lightbox
