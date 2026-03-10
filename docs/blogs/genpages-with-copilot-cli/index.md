@@ -63,7 +63,7 @@ More information and available options for these plugins can be found here: [Pow
 
 Before we can move on to the next step, we first need to select a Power Platform environment. By establishing this connection in advance, Copilot will be able to read and use the necessary information from your environment.
 
-I personally like using the [Power Platform extensie](https://marketplace.visualstudio.com/items?itemName=microsoft-IsvExpTools.powerplatform-vscode) to keep an overview of my environments and solutions. You can also use the [PAC CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/auth) to authenticate and select your environment(s).
+I personally like using the [Power Platform extension](https://marketplace.visualstudio.com/items?itemName=microsoft-IsvExpTools.powerplatform-vscode) to keep an overview of my environments and solutions. You can also use the [PAC CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/auth) to authenticate and select your environment(s).
 
 
 ### Model driven app

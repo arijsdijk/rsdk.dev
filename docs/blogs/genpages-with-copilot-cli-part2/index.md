@@ -2,211 +2,175 @@
 layout: BlogDetail
 sidebar: false
 title: Generative Pages with AI code tools - Part 2
-subtitle: Breadcrumbs in Canvas apps
-description: In this article, I’ll show you how to create breadcrumbs using out-of-the-box Power Apps features to help your users navigate through the app.
+subtitle: genpages with copilot cli (2)
+description: In this article...
 image: /assets/banner.png
 status: concept
-date: 2026-03-01
+date: 2026-03-12
 tags: Power Apps, Copilot
 author: ARJAN RIJSDIJK
 ---
 
 
->>> Verwijzen naar deel 1
+Onlangs publiceerde ik een artikel over het genereren van generative pages met GitHub Copilot CLI en de Power Platform skills plugin. Heb je hem gemist? Je kunt hem hier terugvinden: [Generative pages with GitHub Copilot CLI](https://arjanrijsdijk.com/blogs/genpages-with-copilot-cli/)
+
+In mijn vorige artikel heb ik vooral stilgestaan bij het maken van een nieuwe pagina met Visual Studio code en het uploaden van deze nieuwe pagina naar je Power apps model-driven app.
+
+In dit artikel gaan we het omdraaien, we maken nu eerst een nieuwe generative pages aan via de in-app designer om de pagina vervolgens verder te bewerken in Visual Studio code en dat allemaal met behulp van GitHub Copilot CLI. 
+
+## Preparation
+
+Alvorens we alle stappen van dit artikel kunnen uitvoeren moeten we een aantal voorbereidingen doen, zoals;
+
+* Install GitHub Copilot CLI [read more](https://github.com/features/copilot/cli/)
+* Get Power Platform Skills plugin [read more](https://github.com/microsoft/power-platform-skills/tree/main)
+* Authenticate and select environment
+* Create a model-driven app
+
+In het eerste deel van dit blog kun je meer lezen over de benodigde voorbereidingen.
+
+https://arjanrijsdijk.com/blogs/genpages-with-copilot-cli/#preparation
 
 
-## Preperation
+
+## Create a generative page
 
 
-
-### Copilot CLI 
-
-Voor we met Copilot CLI starten moeten we deze eerst installeren. Meer informatie over installatie en opties kun je vinden via [Install Copilot CLI](https://github.com/features/copilot/cli/).
-
-Open een terminal window in Visual Studio Code en geef het volgende commando in
+Als eerste gaan we aan de slag met het maken van een generative page in de model-driven app. Hiervoor gebruik de volgende prompt geschreven:
 
 ```
-npm install -g @github/copilot
+Build a page showing Lego Minifig records as a gallery of cards using modern look & feel. All cards should have fixed size and tall enough to fit 3 lines of titles. Include name, image url (as image in the card) on the top of the card, and num parts as a badge. Add pagination and show maximum of 24 items per page.
+
+Make the component fill 100% of the space. Make the gallery scrollable. Use data from the Lego Minifig table. Make each card clickable to open the Lego Minifig record in a new window. The target URL should be current location path with following query string parameters: pagetype=entityrecord&etn=[entityname]&id=[recordid] where entityname is rsdk_legominifig and id is rsdk_legominifigid. 
+
+Add a search field to search all lego minifigs on name.
 ```
 
 
-### Power Platform Plugin
+Open je model-driven app in design moddus
+
+Kies voor Add page en vervolgens voor Describe a page
+
+![Model-driven app - describe your page](./assets/1-mda-describe-your-page.gif)
+
+Nu kunnen we onze pagina beschrijven, hiervoor gebruik ik een eerder geschreven prompt, zoals hierboven beschreven. Na het plakken voegen we ook de juiste tabel toe aan de beschrijving.
+
+![Model-driven app - paste prompt, add tables and generate page](./assets/2-mda-generate-page.gif)
+
+De pagina is nu aangemaakt en we kunnen deze in de app nu bekijken en testen.
+
+![Model-driven app - try new generative page](./assets/3-mda-generate-try.gif)
+
+Als de pagina aangemaakt is dan krijgt deze een default naam (Generative Page x), het is raadzaam om de naam nu alvast aan te passen naar een logische naam, dit helpt je verderop in het proces.
+
+![Model-driven app - Generative page change name and publish](./assets/4-mda-change-name-publish.gif)
+
+Vergeet - als je klaar bent - de pagina niet te publishen.
 
 
 
-https://github.com/microsoft/power-platform-skills/tree/main/plugins/model-apps
+## Download generative page
 
+We hebben nu dus een generative page aangemaakt via de in-app designer van de model-driven app. We gaan deze pagina nu downloaden naar onze IDE (in dit geval Visual Studio code), zodat we deze lokaal kunnen bewerken. 
 
-### Authenticate and select environment
+Start Visual Studio code
 
-### Model driven app
-
-
-
-
-
-
-## Generate new page with Copilot CLI
-
-### Start Copilot CLI
-
-Open je terminal en start Copilot via je terminal met het volgende simpele commando
+Open een terminal en geef het volgende commando in
 
 ```
 copilot
 ```
 
-We gaan nu de genpage skill starten (dit is een onderdeel van de eerder geinstalleerde plugin). Ga naar je terminal en geef het volgende commando in 
+GitHub Copilot CLI zal nu starten
+
+![Start GitHub Copilot CLI](./assets/5-copilot-start.gif)
+
+We gaan nu de genpage skill starten met het volgende commando
 
 ```
 /model-apps:genpage
 ```
 
-![Start Copilot and model-app /genpage skill](./assets/1-copilot-start-skill.gif)
+Copilot zal wat controles voor je uitvoeren met betrekking tot de aanwezigheid van Pac cli, Node.js etc.
+
+![GitHub Copilot CLI - Start genpages skill](./assets/6-copilot-genpage-skill.gif)
+
+Als alle controles succesvol zijn uitgevoerd zal de eerste vraag van Copilot zijn of je een neiuwe pagina wilt aanmaken of een bestaande wilt wijzigen.
+
+In dit geval kiezen voor ```2. Edit an existing page```
+
+![GitHub Copilot CLI - Edit an existing page](./assets/7-copilot-edit-existing.gif)
+
+De volgende vraag is in welke app de pagina die je wilt wijzigen zich bevind
+
+In dit voorbeeld is dat de app **Gen Pages Demo** 
+
+Vervolgens zal de vraag worden gesteld **Wich page would you like to edit?**
+
+In dit voorbeeld kiezen we voor de zojuist aangemaakte generative page met de naam **Lego Minifig Gallery**
+
+![GitHub Copilot CLI - Choose app and page](./assets/8-copilot-choose-app-and-page.gif)
+
+De page zal nu worden gedownload. Als deze klaar is zal een nieuwe map met de naam **genpage-edit** beschikbaar zijn in je file explorer.
+
+![GitHub Copilot CLI - Downloaded folder structure](./assets/9-copilot-folder-structure.png)
 
 
+## Folders & files
 
-### Create a new page
+Laten we voordat we verder gaan eens kijken naar de map en inhoud die zoijiuist door Copilot is gedownload. 
 
-Als de genpage skill is gestart zal Copilot wat controles uitvoeren (geselecteerde environment, versies etc.). Als deze controles succesvol zijn uitgevoerd zal Copilot je een aantal vragen stellen. 
-
-De eerste vraag is of je een nieuwe pagina wilt aanmaken, een betaande wilt wijzigen of anders, waarbij je zelf kunt aangeven wat je wilt doen. 
-
-In dit geval kiezen we voor het aanmaken van een nieuwe pagina. 
-
-![Copilot CLI - Genpages - Create new page](./assets/2-copilot-create-page.gif)
+* config.json
+* page.js
+* page.tsx
+* prompt.txt
 
 
+## Make changes
 
-### Describe your page
+Nu we de pagina hebben gedownload kunnen we deze lokaal bewerken. Ook hiervoor blijf ik gebruik maken van GitHub Copilot CLI. 
 
-Copilot zal je nu vragen je pagina te omschrijven. Je hebt eventueel ook de mogelijkheid om te keizen uit een tweetal vooraf gedefinieerde prompts. 
-
-![Copilot CLI - Genpages - Describe your page](./assets/3-copilot-describe.png)
-
-In dit voorbeeld maak ik gebruik van een eigen omschrijving, zie hieronder mijn prompt.
-
-```
-Build a page showing Lego Sets records as a gallery of cards using modern look & feel. All cards should have fixed size and tall enough to fit 3 lines of titles. Include name, image url (as image) on the top, year and parts. 
-
-Make the component fill 100% of the space. Make the gallery scrollable. Use data from the Lego Sets table. Make each card clickable to open the Lego Sets record in a new window. The target URL should be current location path with following query string parameters: pagetype=entityrecord&etn=[entityname]&id=[recordid] where entityname is rsdk_legosets and id is rsdk_LegoSetsId. 
-
-Add a search field to search all lego sets on name or year.
-```
-
-In dit voorbeeld kies ik dus voor de optie **3. Other (type your answer)** vervolgens knip en plak ik mijn prompt. Dit ziet er in je terminal dan als volgt uit.
-
-![Copilot CLI - Genpages - Describe your page with your own prompt](./assets/4-copilot-describe-prompt.gif)
-
-Nu zal Copilot je nog vragen of je omschrijving volledig is en/of je allicht nog aanvullende requirements zou willen toevoegen. In dit geval kies ik voor de optie **1. No, the description covers everything**. In je terminal ziet dat er dan als volgt uit.
-
-![Copilot CLI - Genpages - Confirm description](./assets/5-copilot-describe-confirm.gif)
-
-Wat je nu ziet is dat Copilot een plan heeft gemaakt op basis van mijn prompt. Op dit punt heb je nog de mogleijkheid om het plan aan te passen of een andere opdracht in te geven. Voor nu ben ik tevreden en kies ik voor de optie **1. Looks good, proceed!**
-
-![Copilot CLI - Genpages - Proceed building a new page](./assets/6-copilot-create-proceed.gif)
-
-Copilot gaat nu de pagina voor je bouwen. Tijdens dit proces zal Copilot je vragen om bepaalde mappen en bestanden op de **Allowed list** te zetten, zodat Copilot deze kan benaderen. Bijvoorbeeld het genpage-rules-reference.md bestand in de plugin map. 
-
-![Copilot CLI - Genpages - Add folder/files to allowed list](./assets/7-copilot-add-allowedlist.gif)
-
-
-### What did we get?
-
-Na een klein beetje geduld heeft Copilot een nieuwe pagina voor ons aangemaakt. Copilot zal ook een uitgebreide samenvatting maken en weergeven. Zie hieronder.  
-
-![Copilot CLI - Genpages - Summary](./assets/8-copilot-summary.png)
-
-Voordat we naar de volgende stap gaan en de pagina gaan publiceren in Power Apps gaan we eerst eens kijken naar wat Copilot voor ons heeft gegenereerd. Als we nu kijken naar de file explorer dan zien we dat twee bestanden zijn aangemaakt; 
-
-* RuntimeTypes.ts
-* lego-sets-gallery.tsx 
-
-
-
-### Publish to Power Apps
-
-Als de pagina is aangemaakt zal Copilot je vragen of je de pagina wilt publiceren naar Power Apps. Uiteraard willen we het resultaat ne wel eens zien en kiezen we dus voor de optie ```1. Yes, publish to Power Apps```. 
-
-In de volgende stap zal Copilot je vragen aan welke model-driven app de pagina moet worden toegevoegd. Omdat we al een environment geselecteerd hadden in een eerdere stap zal Copilot je een keuzelijst tonen. In dit voorbeeld publiceren we de pagina naar de model-driven app met de naam **Gen Pages Demo**
-
-![Copilot CLI - Genpages - Deploy new page to Power Apps](./assets/9-copilot-deploy-to-powerapps.gif)
-
-Als we een model-driven app hebben gekozen zal Copilot de pagina publiceren naar de geselecteerde app. 
-
-Vervolgens krijgen we de vraag om de pagina te verifieren in de browser, uiteraard willen we dat en kiezen hier voor ```1. Yes, verify in browser```.
-
-Copilot zal gebruik maken van Playwright als tool om de brwoser te starten. We moeten het gebruik van deze tool dus nog wel. 
-
-![Copilot CLI - Genpages - Verify result in browser](./assets/9-copilot-verify-in-browser.gif)
-
-Als de browser met de nieuwe pagina is geopend kunnen we deze gaan testen. 
-
-![Copilot CLI - Genpages - New page results in browser](./assets/11-copilot-app-result.gif)
-
-
-
-### Playwright
-
-Zoals in een eerdere stap al vermeld zal Copilot de kracht van Playwright gebruiken om de pagina te verifieren en in de browser weer te geven. Echter zal Playwright ook zelf een test uitvoeren om te verifieren dat de pagina correct werkt. 
-
-[hier nog over de testcase]
-
-
-![Copilot CLI - Genpages - Self testing using Playwright](./assets/12-copilot-playwright-tests.gif)
-
-Als je meer wilt weten en leren over Playwright kijk dan eens op de [Playwright website](https://playwright.dev/)
-
-
-
-
-## Create agenerative page from your model-driven app
-
-### Describe your page
-
-Ga naar je model-driven app en kies voor **Add page** en vervolgens voor **Describe a page**
-
-![Model-driven app - Generative page - Create new page](./assets/20-genpage-add.gif)
-
-!!![Nieuwe opname zonder url]
-
-Ook nu hebben we een omschrijving nodig voor de pagina, deze heb ik klaar staan en is vrijwel hetzelfde als de eerder gebruikte prompt, zie hieronder
+Beter nog, Copilot zal je na het downloaden vragen welke wijzigingen je zou willen toevoegen aan de pagina. Ook hiervoor heb ik een simpele prompt voorbereid. 
 
 ```
-Build a page showing Lego Minifigs records as a gallery of cards using modern look & feel. All cards should have fixed size and tall enough to fit 3 lines of titles. Include name, image url (as image) on the top, year and parts. 
+The image section of the card has a light gray background. Make the background transparent. So that it has the same background color as the card.
 
-Make the component fill 100% of the space. Make the gallery scrollable. Use data from the Lego Minifigs table. Make each card clickable to open the Lego Sets record in a new window. The target URL should be current location path with following query string parameters: pagetype=entityrecord&etn=[entityname]&id=[recordid] where entityname is rsdk_legominifig and id is rsdk_legominifigid. 
-
-Add a search field to search all lego minifigs on name.
+Center the ‘number of parts’ badge horizontally within the card.
 ```
 
-We hebben in deze situatie geen beschikking over de plugin met alle context die nodig is voor het toevoegen van bijvoorbeeld datasources gaan we iets anders te werk. In de prompt gaan we nu de tabel opgeven. Ga daarvoor als volgt te werk. 
+Geef je gewenste wijzigingen op, ik plak hiervoor bovenstaande prompt
 
-Plak de prompt in het veld **Describe your page**
+![GitHub Copilot CLI - Describe your changes for the page](./assets/10-copilot-describe-your-changes.gif)
 
-Ga naar de opgegeven tabelnaam en type **/** je kunt nu kiezen uit een lijst met tabellen
-
-
-!!![nieuwe opname voor verhaal met tabellen, geen url]
+Copilot zal nu eerst samenvatting geven van de wijzigingen die het zal doorvoeren en deze vervolgens ook daadwerkelijk doorvoeren.
 
 
 
-### Result
+## Publish to Power Apps
 
-![](./assets/22-genpage-generate.gif)
+Als de wijzigingen zijn doorgevoerd zal Copilot je vragen of je de pagina wilt publiceren naar Power Apps. 
+
+Ik kies hier voor ```1. Yes, publish it```
+
+![GitHub Copilot CLI - Publish to app](./assets/11-copilot-publish.gif)
+
+Voordat Copilot de pagina echt zal publiceren naar Power apps zal het je eerst vragen of je het resultaat wilt verifieren in de browser.
+
+Ik kies hier voor ```1. Yes, verify in browser```
+
+![GitHub Copilot CLI - Verify in browser](./assets/12-copilot-verify-in-browser.gif)
+
+Copilot zal Playwright gebruiken om een browser te openen en de generative page weer te geven.
+
+![GitHub Copilot CLI - Playwright open browser](./assets/13-copilot-playwright-browser.png)
+
+De gevraagde wijzigingen zijn nu doorgevoerd en Copilot zal nog een samenvatting geven van alle taken die het heeft uitgevoerd. 
+
+![GitHub Copilot CLI - Summary](./assets/14-copilot-summary.png)
 
 
+## Wrapping up
 
-
-
-
-### Use Copilot CLI to make changes
-
-## Upload changes
-
-## See the result
-
-Note: you can't add changes to uploaded pages via naturual language directly from your model-driven app
 
 
 
