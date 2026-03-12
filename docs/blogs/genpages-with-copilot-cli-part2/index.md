@@ -3,7 +3,7 @@ layout: BlogDetail
 sidebar: false
 title: Generative Pages with GitHub Copilot CLI (2)
 subtitle: genpages with copilot cli (2)
-description: In this article...
+description: Recently I shared how you can create generative pages for model-driven apps using GitHub Copilot CLI and Visual Studio Code. In that first post, everything started from the IDE.
 image: /assets/banner-social.png
 status: published
 date: 2026-03-12
