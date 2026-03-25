@@ -16,8 +16,4 @@ When the user ask you to create a blog page, be sure to follow the structure and
 
 When the user ask you to create a sessions page, be sure to follow the structure and frontmatter descripted in the .github/requirements.md file.
 
-For the design of the site follow my Google Sticth design. HTML templates are stored in the .github/design folder. 
-
-
-
-
+For the design of the site follow my Google Stitch design. HTML templates are stored in the .github/design folder. 

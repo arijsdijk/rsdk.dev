@@ -11,6 +11,15 @@ tags: Power Platform
 author: ARJAN RIJSDIJK
 ---
 
+## ToDo 
+
+- Transpile, what is it and how do we need to use it
+- Short article, not o much other stuff
+- Create basic slides for the LinkedIn post
+
+
+
+
 
 
 
