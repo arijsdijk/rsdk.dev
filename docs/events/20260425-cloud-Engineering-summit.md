@@ -4,7 +4,7 @@ description: One build to rule them all, master reusability in the Power Platfor
 event: Microsoft Cloud Engineering Summit 2026 
 location: London, England
 link: https://www.powercommunity.com/
-date: 2026-04-25
+date: 2026-04-24
 status: published
 ---
 
