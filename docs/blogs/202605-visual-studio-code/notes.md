@@ -1,8 +1,9 @@
 # Visual Studio Code
 
-- Integrated brows
+- Integrated browser
 - Add element to chat
 - Add Console log to Chat
 - Developer Tools
 - Browser settings
+
 
