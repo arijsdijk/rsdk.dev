@@ -52,6 +52,13 @@ Je kunt ook direct klikken op `Open Quick Access`
 Er zal nu een browser als tabblad worden geopend in je VSCode workspace. Je kunt nu ieder gewenste url ingeven om deze in de browser te laden. 
 
 
+## Add website to chat
+
+! Laat zien hoe je met de optie in de address bar de site kunt toevoegen in de chat. 
+! Bedenk en bekijk een voorbeeld waarop dit handig zou kunnen zijn. Bijvoorbeeld een JSON in een Owe Automate Flow. Of Learn documentatie. Hier moet je nog beter over nadenken. 
+
+
+
 ## Local development server
 
 ! Bouw een simpele code app als voorbeeld voor deze blogpost. 
