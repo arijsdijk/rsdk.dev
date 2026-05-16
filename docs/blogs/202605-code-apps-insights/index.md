@@ -12,29 +12,39 @@ author: ARJAN RIJSDIJK
 ---
 
 
-# Code Apps Insights
+# App Insights
 
 
-# Inleiding
 
 # Azure Subscription
 
-# Applications Insights & Code Apps
 
-## Implement
 
-### Connection string 
+# Insights in Code Apps
 
-### Environment Variables
+## How to
 
-Waarom een connection string veilig via Odata kan verlopen
-
-## Track Trace
-
-## Track Exception
-
-## Get Context 
+## Connection string 
 
 ## Skill
+
+## Logs
+
+
+
+# Insights in Canvas apps
+
+## Configure
+
+## Trace
+
+## Logs
+
+
+# What's next
+
+
+
+
 
 
