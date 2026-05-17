@@ -4,7 +4,7 @@ sidebar: false
 title: New Data Grid Control for Canvas apps
 subtitle: New! Data Grid control
 description: One of the latest announcements from Microsoft is the new Data grid Control for Canvas apps. It is now in public preview, so this is a good time to take a closer look!
-image: /images/blog/power-automate-flows.jpg
+image: /assets/banner-social.png
 status: published
 date: 2026-05-18
 tags: Power Apps
