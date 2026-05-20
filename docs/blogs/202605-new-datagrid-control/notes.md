@@ -41,6 +41,3 @@ But the one that really stood out to me this time is the new Data Grid control i
 If you are curious about how to use it and what options it gives you, check out my blog:
 
 
-
-
-
