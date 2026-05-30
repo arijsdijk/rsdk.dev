@@ -41,7 +41,7 @@ In deze post laat ik jullie de volgende handigheidjes zien;
 
 Ga naar VS code en gebruik de volgende toetsencobinatie ` CMD + P ` op Mac of ` CTRL + P ` op Windows
 
-Hiermee zal het Quick Access venster worden geopend. 
+Hiermee zal het **Quick Access** venster worden geopend. 
 
 Je kunt ook direct klikken op `Open Quick Access`
 
