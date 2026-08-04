@@ -1,7 +1,5 @@
 # Copilot Instructions
 
-Always start your reponse to the user with the text "Yo, Arjan ..."
-
 Always use Vitepress reference when creating code, reference: https://vitepress.dev/
 
 When the user ask you to create a new page, always use the layout "custom layout" like descripted in the Vitepress documentation when the user ask you to create a new page, referende: https://vitepress.dev/reference/default-theme-layout#custom-layout. If neccesary create a new layout file in the .vitepress/theme folder.
